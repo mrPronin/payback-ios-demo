@@ -10,8 +10,11 @@
 		0971197429D95E9E00D00134 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197329D95E9E00D00134 /* Transaction.swift */; };
 		0971197629D95F7200D00134 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197529D95F7200D00134 /* TransactionListViewModel.swift */; };
 		0971197829D9607400D00134 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197729D9607400D00134 /* TransactionList.swift */; };
+		0971197C29D99E7C00D00134 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197B29D99E7C00D00134 /* TransactionListView.swift */; };
+		0971197E29D99FBA00D00134 /* TransactionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197D29D99FBA00D00134 /* TransactionListItemView.swift */; };
+		0971198029D9A1C600D00134 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0971197F29D9A1C600D00134 /* PBTransactions.json */; };
+		0971198329D9B01500D00134 /* BannerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971198229D9B01500D00134 /* BannerViewModifier.swift */; };
 		09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5129D9599E0075198D /* PaybackApp.swift */; };
-		09D02D5429D9599E0075198D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5329D9599E0075198D /* ContentView.swift */; };
 		09D02D5629D9599F0075198D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5529D9599F0075198D /* Assets.xcassets */; };
 		09D02D5929D9599F0075198D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5829D9599F0075198D /* Preview Assets.xcassets */; };
 		09D02D6329D9599F0075198D /* PaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D6229D9599F0075198D /* PaybackTests.swift */; };
@@ -31,9 +34,12 @@
 		0971197329D95E9E00D00134 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		0971197529D95F7200D00134 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		0971197729D9607400D00134 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		0971197B29D99E7C00D00134 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		0971197D29D99FBA00D00134 /* TransactionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListItemView.swift; sourceTree = "<group>"; };
+		0971197F29D9A1C600D00134 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = SOURCE_ROOT; };
+		0971198229D9B01500D00134 /* BannerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModifier.swift; sourceTree = "<group>"; };
 		09D02D4E29D9599E0075198D /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D02D5129D9599E0075198D /* PaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackApp.swift; sourceTree = "<group>"; };
-		09D02D5329D9599E0075198D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09D02D5529D9599F0075198D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D02D5829D9599F0075198D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09D02D5E29D9599F0075198D /* PaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +91,8 @@
 		0971197129D95D7D00D00134 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				09D02D5329D9599E0075198D /* ContentView.swift */,
+				0971197929D99C8500D00134 /* TransactionList */,
+				0971197A29D99C8F00D00134 /* TransactionDetails */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -93,8 +100,33 @@
 		0971197229D95D9300D00134 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0971198129D9AFFB00D00134 /* View */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		0971197929D99C8500D00134 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				0971197B29D99E7C00D00134 /* TransactionListView.swift */,
+				0971197D29D99FBA00D00134 /* TransactionListItemView.swift */,
+			);
+			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		0971197A29D99C8F00D00134 /* TransactionDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TransactionDetails;
+			sourceTree = "<group>";
+		};
+		0971198129D9AFFB00D00134 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0971198229D9B01500D00134 /* BannerViewModifier.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		09D02D4529D9599E0075198D = {
@@ -134,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				09D02D5829D9599F0075198D /* Preview Assets.xcassets */,
+				0971197F29D9A1C600D00134 /* PBTransactions.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -228,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09D02D5929D9599F0075198D /* Preview Assets.xcassets in Resources */,
+				0971198029D9A1C600D00134 /* PBTransactions.json in Resources */,
 				09D02D5629D9599F0075198D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,11 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D02D5429D9599E0075198D /* ContentView.swift in Sources */,
+				0971198329D9B01500D00134 /* BannerViewModifier.swift in Sources */,
 				0971197829D9607400D00134 /* TransactionList.swift in Sources */,
 				09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */,
 				0971197429D95E9E00D00134 /* Transaction.swift in Sources */,
 				0971197629D95F7200D00134 /* TransactionListViewModel.swift in Sources */,
+				0971197E29D99FBA00D00134 /* TransactionListItemView.swift in Sources */,
+				0971197C29D99E7C00D00134 /* TransactionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
