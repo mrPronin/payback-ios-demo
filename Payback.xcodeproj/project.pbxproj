@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0971197429D95E9E00D00134 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197329D95E9E00D00134 /* Transaction.swift */; };
 		09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5129D9599E0075198D /* PaybackApp.swift */; };
 		09D02D5429D9599E0075198D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5329D9599E0075198D /* ContentView.swift */; };
 		09D02D5629D9599F0075198D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5529D9599F0075198D /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0971197329D95E9E00D00134 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		09D02D4E29D9599E0075198D /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D02D5129D9599E0075198D /* PaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackApp.swift; sourceTree = "<group>"; };
 		09D02D5329D9599E0075198D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		0971196F29D95D5600D00134 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0971197329D95E9E00D00134 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				09D02D5429D9599E0075198D /* ContentView.swift in Sources */,
 				09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */,
+				0971197429D95E9E00D00134 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
