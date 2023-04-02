@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0971197429D95E9E00D00134 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197329D95E9E00D00134 /* Transaction.swift */; };
+		0971197629D95F7200D00134 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197529D95F7200D00134 /* TransactionListViewModel.swift */; };
+		0971197829D9607400D00134 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197729D9607400D00134 /* TransactionList.swift */; };
 		09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5129D9599E0075198D /* PaybackApp.swift */; };
 		09D02D5429D9599E0075198D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5329D9599E0075198D /* ContentView.swift */; };
 		09D02D5629D9599F0075198D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5529D9599F0075198D /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		0971197329D95E9E00D00134 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		0971197529D95F7200D00134 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		0971197729D9607400D00134 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		09D02D4E29D9599E0075198D /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D02D5129D9599E0075198D /* PaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackApp.swift; sourceTree = "<group>"; };
 		09D02D5329D9599E0075198D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				0971197329D95E9E00D00134 /* Transaction.swift */,
+				0971197729D9607400D00134 /* TransactionList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 		0971197029D95D6C00D00134 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0971197529D95F7200D00134 /* TransactionListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,8 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				09D02D5429D9599E0075198D /* ContentView.swift in Sources */,
+				0971197829D9607400D00134 /* TransactionList.swift in Sources */,
 				09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */,
 				0971197429D95E9E00D00134 /* Transaction.swift in Sources */,
+				0971197629D95F7200D00134 /* TransactionListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
