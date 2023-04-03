@@ -26,6 +26,10 @@ class TransactionListViewModel: ObservableObject {
         return transactions.filter { $0.category == selectedCategoryFilter }
     }
     
+    var filteredTransactionsTotal: Double {
+        return filteredTransactions.reduce(0.0) { $0 + $1.transactionDetail.value.amount }
+    }
+    
     func fetchTransactions() {
         
         guard isNetworkAvailable else { return }
@@ -63,7 +67,7 @@ class TransactionListViewModel: ObservableObject {
     }
     
     // MARK: - Init
-
+    
     init() {
         monitor = NWPathMonitor()
         monitor.pathUpdateHandler = { [weak self] path in
@@ -79,7 +83,7 @@ class TransactionListViewModel: ObservableObject {
         }
         monitor.start(queue: queue)
     }
-
+    
     // MARK: - Private
     
     private var isNetworkAvailable = true

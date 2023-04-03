@@ -31,6 +31,17 @@ struct TransactionListView: View {
                     }
                     .padding(.vertical)
                     .padding(.top, 0)
+                    
+                    HStack {
+                        Spacer()
+                        Text("Total: \(String(format: "%.02f", viewModel.filteredTransactionsTotal))")
+                            .padding(.horizontal)
+                            .padding(.top, 0)
+                            .padding(.bottom, 0)
+                            .padding(.trailing, 16)
+                            .fontWeight(.semibold)
+                    }
+                    
                 }
             }
             .banner(data: $viewModel.bannerData)
