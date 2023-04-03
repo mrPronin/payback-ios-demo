@@ -41,7 +41,6 @@ struct TransactionListView: View {
                             .padding(.trailing, 16)
                             .fontWeight(.semibold)
                     }
-                    
                 }
             }
             .banner(data: $viewModel.bannerData)
