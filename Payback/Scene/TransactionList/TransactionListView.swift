@@ -17,9 +17,20 @@ struct TransactionListView: View {
                 if viewModel.isLoading {
                     ProgressView()
                 } else {
-                    List(viewModel.transactions) { transaction in
+                    Picker("Category", selection: $viewModel.selectedCategoryFilter) {
+                        ForEach(viewModel.categoryFilterPickerOptions, id: \.id) { option in
+                            Text(option.title)
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+                    
+                    List(viewModel.filteredTransactions) { transaction in
                         TransactionListItemView(transaction: transaction)
                     }
+                    .padding(.vertical)
+                    .padding(.top, 0)
                 }
             }
             .banner(data: $viewModel.bannerData)

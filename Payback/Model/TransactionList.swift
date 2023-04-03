@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct TransactionList: Decodable {
     let items: [Transaction]
 }

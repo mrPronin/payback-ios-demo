@@ -57,7 +57,10 @@ struct BannerViewModifier: ViewModifier {
                     .cornerRadius(8)
                     Spacer()
                 }
-                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+//                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                .padding(.horizontal)
+                .padding(.top, 0)
+                .padding(.bottom, 0)
                 .animation(.easeInOut, value: UUID())
                 .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
                 .onTapGesture {
