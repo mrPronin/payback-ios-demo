@@ -46,9 +46,9 @@ struct TransactionListView: View {
             }
             .banner(data: $viewModel.bannerData)
             .navigationTitle("Transactions")
-            .onAppear {
+            .task {
                 if !dataLoaded {
-                    viewModel.fetchTransactions()
+                    await viewModel.fetchTransactions()
                     dataLoaded = true
                 }
             }
