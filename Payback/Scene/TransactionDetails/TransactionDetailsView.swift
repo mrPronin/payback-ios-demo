@@ -30,6 +30,7 @@ struct TransactionDetailsView: View {
             VStack {
                 HStack {
                     Text("Description:")
+                        .font(.headline)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                         
@@ -43,6 +44,7 @@ struct TransactionDetailsView: View {
                 
                 HStack {
                     Text("Booking date:")
+                        .font(.headline)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                         
