@@ -11,26 +11,56 @@ struct TransactionDetailsView: View {
     let transaction: Transaction
     
     var body: some View {
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("Partner display name:")
-                        .font(.headline)
-                    Spacer()
-                    Text(transaction.partnerDisplayName)
-                }
-                
+        VStack {
+            HStack {
+                Text("Partner display name:")
+                    .font(.headline)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+
+                Text(transaction.partnerDisplayName)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    .foregroundColor(.gray)
+            }
+            .padding(.vertical)
+            .background(.white)
+            .cornerRadius(8)
+            
+            VStack {
                 HStack {
                     Text("Description:")
-                        .font(.headline)
-                    Spacer()
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        
                     Text(transaction.transactionDetail.description ?? "No description provided")
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        .foregroundColor(.gray)
                 }
                 
-                Spacer()
+                Divider()
+                
+                HStack {
+                    Text("Booking date:")
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        
+                    Text(transaction.transactionDetail.bookingDate, style: .date)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        .foregroundColor(.gray)
+                }
             }
-            .padding()
-            .background(Color.brandBackground.edgesIgnoringSafeArea(.horizontal))
-            .navigationTitle("Transaction Detail")
+            .padding(.vertical)
+            .background(.white)
+            .cornerRadius(8)
+
+            Spacer()
+        }
+        .padding()
+        .background(Color.brandBackground.edgesIgnoringSafeArea(.horizontal))
+        .navigationTitle("Transaction Detail")
     }
 }
 
