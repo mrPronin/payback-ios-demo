@@ -29,16 +29,16 @@ struct TransactionListView: View {
                     List(viewModel.filteredTransactions) { transaction in
                         TransactionListItemView(transaction: transaction)
                     }
-                    .padding(.vertical)
                     .padding(.top, 0)
+                    .background(Color.brandBackground)
+                    .scrollContentBackground(.hidden)
                     
                     HStack {
                         Spacer()
                         Text("Total: \(String(format: "%.02f", viewModel.filteredTransactionsTotal))")
-                            .padding(.horizontal)
                             .padding(.top, 0)
-                            .padding(.bottom, 0)
-                            .padding(.trailing, 16)
+                            .padding(.bottom)
+                            .padding(.trailing)
                             .fontWeight(.semibold)
                     }
                 }

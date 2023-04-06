@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095C65D329DEE4FC00162462 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C65D229DEE4FC00162462 /* Color.swift */; };
 		0971197429D95E9E00D00134 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197329D95E9E00D00134 /* Transaction.swift */; };
 		0971197629D95F7200D00134 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197529D95F7200D00134 /* TransactionListViewModel.swift */; };
 		0971197829D9607400D00134 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197729D9607400D00134 /* TransactionList.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		095C65D229DEE4FC00162462 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0971197329D95E9E00D00134 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		0971197529D95F7200D00134 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		0971197729D9607400D00134 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		095C65D129DEE4E400162462 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				095C65D229DEE4FC00162462 /* Color.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 		0971196E29D95D4600D00134 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
+				095C65D129DEE4E400162462 /* Appearance */,
 				0971196E29D95D4600D00134 /* Service */,
 				0971196F29D95D5600D00134 /* Model */,
 				0971197029D95D6C00D00134 /* ViewModel */,
@@ -291,6 +302,7 @@
 				0971197E29D99FBA00D00134 /* TransactionListItemView.swift in Sources */,
 				09A939FB29DB13BC00527841 /* TransactionDetailsView.swift in Sources */,
 				0971197C29D99E7C00D00134 /* TransactionListView.swift in Sources */,
+				095C65D329DEE4FC00162462 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

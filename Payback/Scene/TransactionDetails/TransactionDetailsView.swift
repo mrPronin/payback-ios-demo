@@ -29,5 +29,38 @@ struct TransactionDetailsView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Transaction Detail")    }
+            .background(Color.brandBackground.edgesIgnoringSafeArea(.horizontal))
+            .navigationTitle("Transaction Detail")
+    }
+}
+
+struct Previews_TransactionDetailsView_Previews: PreviewProvider {
+    
+    static var transaction: Transaction {
+        let json = """
+            {
+              "partnerDisplayName": "REWE Group",
+              "alias": {
+                "reference": "795357452000810"
+              },
+              "category": 1,
+              "transactionDetail": {
+                "description": "Punkte sammeln",
+                "bookingDate": "2022-07-24T10:59:05+0200",
+                "value": {
+                  "amount": 124,
+                  "currency": "PBP"
+                }
+              }
+            }
+        """
+        let jsonData = json.data(using: .utf8)!
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return try! decoder.decode(Transaction.self, from: jsonData)
+    }
+    
+    static var previews: some View {
+        TransactionDetailsView(transaction: transaction)
+    }
 }
