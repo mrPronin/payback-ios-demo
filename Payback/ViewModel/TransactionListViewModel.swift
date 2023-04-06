@@ -54,7 +54,6 @@ class TransactionListViewModel: ObservableObject {
             let decodedData = try decoder.decode(TransactionList.self, from: data)
             let transactions = decodedData.items
                 .sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate })
-            print("transactions: \(transactions.count)")
             self.transactions = transactions
             let categories = Array(Set(transactions.map { $0.category })).sorted()
             categoryFilterPickerOptions = [(-1, "All")] + categories.map { (id: $0, title: "Category \($0)") }
