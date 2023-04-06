@@ -42,27 +42,27 @@ class TransactionListViewModel: ObservableObject {
             bannerData = BannerViewModifier.BannerData(title: "Error", details: "Some network error", type: .error)
             return
         }
-        if let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") {
-            do {
-                try await Task.sleep(nanoseconds: 1_000_000_000) // Simulate a 1 second
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                let decodedData = try decoder.decode(TransactionList.self, from: data)
-                let transactions = decodedData.items
-                    .sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate })
-                self.transactions = transactions
-                let categories = Array(Set(transactions.map { $0.category })).sorted()
-                categoryFilterPickerOptions = [(-1, "All")]
-                categoryFilterPickerOptions.append(contentsOf: categories.map { (id: $0, title: "Category \($0)") })
-            } catch {
-                print(error)
-                bannerData = BannerViewModifier.BannerData(title: "Error", details: error.localizedDescription, type: .error)
-            }
-        } else {
+        guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
             bannerData = BannerViewModifier.BannerData(title: "Error", details: "Failed to load JSON data", type: .error)
+            return
         }
-        
+        do {
+            try await Task.sleep(nanoseconds: 1_000_000_000) // Simulate a 1 second
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let decodedData = try decoder.decode(TransactionList.self, from: data)
+            let transactions = decodedData.items
+                .sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate })
+            print("transactions: \(transactions.count)")
+            self.transactions = transactions
+            let categories = Array(Set(transactions.map { $0.category })).sorted()
+            categoryFilterPickerOptions = [(-1, "All")] + categories.map { (id: $0, title: "Category \($0)") }
+        } catch {
+            print(error)
+            bannerData = BannerViewModifier.BannerData(title: "Error", details: error.localizedDescription, type: .error)
+        }
+
         isLoading = false
     }
     

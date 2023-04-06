@@ -15,33 +15,38 @@ struct TransactionListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else {
-                    Picker("Category", selection: $viewModel.selectedCategoryFilter) {
-                        ForEach(viewModel.categoryFilterPickerOptions, id: \.id) { option in
-                            Text(option.title)
-                        }
+                Picker("Category", selection: $viewModel.selectedCategoryFilter) {
+                    ForEach(viewModel.categoryFilterPickerOptions, id: \.id) { option in
+                        Text(option.title)
                     }
-                    .pickerStyle(.navigationLink)
-                    .padding(.horizontal)
-                    .padding(.top, 8)
-                    
+                }
+                .pickerStyle(.navigationLink)
+                .padding(.horizontal)
+                .padding(.top, 8)
+                
+                ZStack {
                     List(viewModel.filteredTransactions) { transaction in
                         TransactionListItemView(transaction: transaction)
                     }
                     .padding(.top, 0)
                     .background(Color.brandBackground)
                     .scrollContentBackground(.hidden)
-                    
-                    HStack {
-                        Spacer()
-                        Text("Total: \(String(format: "%.02f", viewModel.filteredTransactionsTotal))")
-                            .padding(.top)
-                            .padding(.bottom)
-                            .padding(.trailing)
-                            .fontWeight(.semibold)
+                    .refreshable {
+                        await viewModel.fetchTransactions()
+                        dataLoaded = true
                     }
+                    if viewModel.isLoading {
+                        ProgressView()
+                    }
+                }
+                
+                HStack {
+                    Spacer()
+                    Text("Total: \(String(format: "%.02f", viewModel.filteredTransactionsTotal))")
+                        .padding(.top)
+                        .padding(.bottom)
+                        .padding(.trailing)
+                        .fontWeight(.semibold)
                 }
             }
             .banner(data: $viewModel.bannerData)
