@@ -40,13 +40,18 @@ struct TransactionListView: View {
                     }
                 }
                 
-                HStack {
-                    Spacer()
-                    Text("Total: \(String(format: "%.02f", viewModel.filteredTransactionsTotal))")
+                if viewModel.filteredTransactionsTotal > 0 {
+                    HStack {
+                        Spacer()
+                        HStack {
+                            Text("Total:")
+                                .fontWeight(.semibold)
+                            Text(viewModel.filteredTransactionsTotal, format: .currency(code: viewModel.transactionsCurrency))
+                        }
                         .padding(.top)
                         .padding(.bottom)
                         .padding(.trailing)
-                        .fontWeight(.semibold)
+                    }
                 }
             }
             .banner(data: $viewModel.bannerData)

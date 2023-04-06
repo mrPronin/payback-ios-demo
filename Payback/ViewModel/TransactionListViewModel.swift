@@ -31,6 +31,15 @@ class TransactionListViewModel: ObservableObject {
         return filteredTransactions.reduce(0.0) { $0 + $1.transactionDetail.value.amount }
     }
     
+    var transactionsCurrency: String {
+        print(filteredTransactions.count)
+        guard let currency = Array(Set(filteredTransactions.map { $0.transactionDetail.value.currency })).first else {
+//            bannerData = BannerViewModifier.BannerData(title: "Error", details: "Currency is not defined", type: .error)
+            return ""
+        }
+        return currency
+    }
+    
     func fetchTransactions() async {
         
         guard isNetworkAvailable else { return }

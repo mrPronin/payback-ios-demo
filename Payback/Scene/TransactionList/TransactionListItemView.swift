@@ -21,7 +21,7 @@ struct TransactionListItemView: View {
                 HStack {
                     Text(transaction.transactionDetail.bookingDate, style: .date)
                     Spacer()
-                    Text("\(String(format: "%.02f", transaction.transactionDetail.value.amount)) \(transaction.transactionDetail.value.currency)")
+                    Text(transaction.transactionDetail.value.amount, format: .currency(code: transaction.transactionDetail.value.currency))
                 }
             }
         }
