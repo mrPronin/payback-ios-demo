@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionListView: View {
     
     @StateObject var viewModel = TransactionListViewModel()
+    @State private var dataLoaded = false
     
     var body: some View {
         NavigationView {
@@ -36,7 +37,7 @@ struct TransactionListView: View {
                     HStack {
                         Spacer()
                         Text("Total: \(String(format: "%.02f", viewModel.filteredTransactionsTotal))")
-                            .padding(.top, 0)
+                            .padding(.top)
                             .padding(.bottom)
                             .padding(.trailing)
                             .fontWeight(.semibold)
@@ -46,7 +47,10 @@ struct TransactionListView: View {
             .banner(data: $viewModel.bannerData)
             .navigationTitle("Transactions")
             .onAppear {
-                viewModel.fetchTransactions()
+                if !dataLoaded {
+                    viewModel.fetchTransactions()
+                    dataLoaded = true
+                }
             }
         }
     }
