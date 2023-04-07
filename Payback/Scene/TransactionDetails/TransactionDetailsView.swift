@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PaybackCommon
 
 struct TransactionDetailsView: View {
     let transaction: Transaction

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095C65D329DEE4FC00162462 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C65D229DEE4FC00162462 /* Color.swift */; };
+		096B55B729E0728100326E61 /* PaybackCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 096B55B629E0728100326E61 /* PaybackCommon */; };
 		0971197429D95E9E00D00134 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197329D95E9E00D00134 /* Transaction.swift */; };
 		0971197629D95F7200D00134 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197529D95F7200D00134 /* TransactionListViewModel.swift */; };
 		0971197829D9607400D00134 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197729D9607400D00134 /* TransactionList.swift */; };
@@ -33,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		095C65D229DEE4FC00162462 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		096B55B429E070DA00326E61 /* PaybackCommon */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackCommon; sourceTree = SOURCE_ROOT; };
 		0971197329D95E9E00D00134 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		0971197529D95F7200D00134 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		0971197729D9607400D00134 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096B55B729E0728100326E61 /* PaybackCommon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +69,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		095C65D129DEE4E400162462 /* Appearance */ = {
+		096B55B529E0728100326E61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				095C65D229DEE4FC00162462 /* Color.swift */,
 			);
-			path = Appearance;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0971196E29D95D4600D00134 /* Service */ = {
@@ -148,6 +148,7 @@
 				09D02D5029D9599E0075198D /* Payback */,
 				09D02D6129D9599F0075198D /* PaybackTests */,
 				09D02D4F29D9599E0075198D /* Products */,
+				096B55B529E0728100326E61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
-				095C65D129DEE4E400162462 /* Appearance */,
+				096B55B429E070DA00326E61 /* PaybackCommon */,
 				0971196E29D95D4600D00134 /* Service */,
 				0971196F29D95D5600D00134 /* Model */,
 				0971197029D95D6C00D00134 /* ViewModel */,
@@ -209,6 +210,9 @@
 			dependencies = (
 			);
 			name = Payback;
+			packageProductDependencies = (
+				096B55B629E0728100326E61 /* PaybackCommon */,
+			);
 			productName = Payback;
 			productReference = 09D02D4E29D9599E0075198D /* Payback.app */;
 			productType = "com.apple.product-type.application";
@@ -302,7 +306,6 @@
 				0971197E29D99FBA00D00134 /* TransactionListItemView.swift in Sources */,
 				09A939FB29DB13BC00527841 /* TransactionDetailsView.swift in Sources */,
 				0971197C29D99E7C00D00134 /* TransactionListView.swift in Sources */,
-				095C65D329DEE4FC00162462 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +573,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		096B55B629E0728100326E61 /* PaybackCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PaybackCommon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09D02D4629D9599E0075198D /* Project object */;
 }
