@@ -32,9 +32,9 @@ public struct BannerViewModifier: ViewModifier {
         
         var backgroundColor: Color {
             switch self {
-            case .info: return .blue
-            case .warning: return .orange
-            case .error: return Color(red: 217/255, green: 77/255, blue: 77/255)
+            case .info: return Color.infoBannerBackground
+            case .warning: return Color.warningBannerBackground
+            case .error: return Color.errorBannerBackground
             }
         }
     }
