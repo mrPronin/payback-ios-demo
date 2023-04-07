@@ -9,11 +9,11 @@ import Foundation
 import Network
 
 @MainActor
-class TransactionListViewModel: ObservableObject {
+final class TransactionListViewModel: ObservableObject {
     
-    @Published var isLoading = false
+    @Published private(set) var isLoading = false
     @Published var bannerData: BannerViewModifier.BannerData? = nil
-    @Published var categoryFilterPickerOptions: [(id: Int, title: String)] = []
+    @Published private(set) var categoryFilterPickerOptions: [(id: Int, title: String)] = []
     @Published var selectedCategoryFilter: Int = -1 {
         didSet {
             objectWillChange.send()
@@ -33,8 +33,7 @@ class TransactionListViewModel: ObservableObject {
     
     var transactionsCurrency: String {
         print(filteredTransactions.count)
-        guard let currency = Array(Set(filteredTransactions.map { $0.transactionDetail.value.currency })).first else {
-//            bannerData = BannerViewModifier.BannerData(title: "Error", details: "Currency is not defined", type: .error)
+        guard let currency = Array(Set(filteredTransactions.map(\.transactionDetail.value.currency))).first else {
             return ""
         }
         return currency
@@ -64,7 +63,7 @@ class TransactionListViewModel: ObservableObject {
             let transactions = decodedData.items
                 .sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate })
             self.transactions = transactions
-            let categories = Array(Set(transactions.map { $0.category })).sorted()
+            let categories = Array(Set(transactions.map(\.category))).sorted()
             categoryFilterPickerOptions = [(-1, "All")] + categories.map { (id: $0, title: "Category \($0)") }
         } catch {
             print(error)
