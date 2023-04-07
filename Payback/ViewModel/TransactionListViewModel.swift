@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+import PaybackCommon
 
 final class TransactionListViewModel: ObservableObject {
     

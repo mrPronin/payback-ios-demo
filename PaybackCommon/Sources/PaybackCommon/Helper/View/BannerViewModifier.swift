@@ -7,15 +7,21 @@
 
 import SwiftUI
 
-struct BannerViewModifier: ViewModifier {
+public struct BannerViewModifier: ViewModifier {
     
-    struct BannerData {
+    public struct BannerData {
         let title: String
         let details: String
         let type: BannerType
+        
+        public init(title: String, details: String, type: BannerType) {
+            self.title = title
+            self.details = details
+            self.type = type
+        }
     }
     
-    enum BannerType {
+    public enum BannerType {
         case info
         case warning
         case error
@@ -33,10 +39,14 @@ struct BannerViewModifier: ViewModifier {
         }
     }
     
+    public init(data: Binding<BannerViewModifier.BannerData?>) {
+        self._data = data
+    }
+    
     // Banner members
     @Binding var data: BannerData?
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         ZStack {
             content
             if let data = data {
@@ -74,7 +84,7 @@ struct BannerViewModifier: ViewModifier {
 }
 
 extension View {
-    func banner(data: Binding<BannerViewModifier.BannerData?>) -> some View {
+    public func banner(data: Binding<BannerViewModifier.BannerData?>) -> some View {
         self.modifier(BannerViewModifier(data: data))
     }
 }
