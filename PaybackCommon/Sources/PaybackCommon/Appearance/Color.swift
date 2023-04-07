@@ -2,5 +2,5 @@ import SwiftUI
 import UIKit
 
 public extension Color {
-    static let brandBackground = Color(UIColor(named: "BrandBackground", in: .module, compatibleWith: nil)!)
+    static let brandBackground = Color("BrandBackground", bundle: .module)
 }
