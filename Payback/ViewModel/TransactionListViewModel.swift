@@ -8,7 +8,6 @@
 import Foundation
 import Network
 
-@MainActor
 final class TransactionListViewModel: ObservableObject {
     
     @Published private(set) var isLoading = false
@@ -32,7 +31,6 @@ final class TransactionListViewModel: ObservableObject {
     }
     
     var transactionsCurrency: String {
-        print(filteredTransactions.count)
         guard let currency = Array(Set(filteredTransactions.map(\.transactionDetail.value.currency))).first else {
             return ""
         }
@@ -43,15 +41,15 @@ final class TransactionListViewModel: ObservableObject {
         
         guard isNetworkAvailable else { return }
         
-        isLoading = true
+        await set(isLoading: true)
         
         if /*Bool.random()*/ false {
-            isLoading = false
-            bannerData = BannerViewModifier.BannerData(title: "Error", details: "Some network error", type: .error)
+            await set(isLoading: false)
+            await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Some network error", type: .error))
             return
         }
         guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
-            bannerData = BannerViewModifier.BannerData(title: "Error", details: "Failed to load JSON data", type: .error)
+            await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Failed to load JSON data", type: .error))
             return
         }
         do {
@@ -64,27 +62,27 @@ final class TransactionListViewModel: ObservableObject {
                 .sorted(by: { $0.transactionDetail.bookingDate > $1.transactionDetail.bookingDate })
             self.transactions = transactions
             let categories = Array(Set(transactions.map(\.category))).sorted()
-            categoryFilterPickerOptions = [(-1, "All")] + categories.map { (id: $0, title: "Category \($0)") }
+            await set(categoryFilterPickerOptions: [(-1, "All")] + categories.map { (id: $0, title: "Category \($0)") })
         } catch {
             print(error)
-            bannerData = BannerViewModifier.BannerData(title: "Error", details: error.localizedDescription, type: .error)
+            await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: error.localizedDescription, type: .error))
         }
 
-        isLoading = false
+        await set(isLoading: false)
     }
     
     // MARK: - Init
     
     init() {
         monitor = NWPathMonitor()
-        monitor.pathUpdateHandler = { [weak self] path in
-            DispatchQueue.main.async {
+        monitor.pathUpdateHandler = { path in
+            Task { [weak self] in
                 let isNetworkAvailable = path.status == .satisfied
                 self?.isNetworkAvailable = isNetworkAvailable
                 if !isNetworkAvailable {
-                    self?.bannerData = BannerViewModifier.BannerData(title: "Error", details: "Network is not available", type: .error)
+                    await self?.set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Network is not available", type: .error))
                 } else {
-                    self?.bannerData = nil
+                    await self?.set(bannerData: nil)
                 }
             }
         }
@@ -97,4 +95,19 @@ final class TransactionListViewModel: ObservableObject {
     private let monitor: NWPathMonitor
     private let queue = DispatchQueue(label: "NetworkMonitor")
     private var transactions = [Transaction]()
+    
+    @MainActor
+    private func set(isLoading: Bool) {
+        self.isLoading = isLoading
+    }
+    
+    @MainActor
+    private func set(bannerData: BannerViewModifier.BannerData?) {
+        self.bannerData = bannerData
+    }
+    
+    @MainActor
+    private func set(categoryFilterPickerOptions: [(id: Int, title: String)]) {
+        self.categoryFilterPickerOptions = categoryFilterPickerOptions
+    }
 }
