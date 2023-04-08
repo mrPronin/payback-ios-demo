@@ -38,6 +38,7 @@ struct TransactionServiceMock: TransactionService {
         }
         
         return Just(decodedData)
+            .delay(for: 1, scheduler: RunLoop.main)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }
