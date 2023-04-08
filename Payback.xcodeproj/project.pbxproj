@@ -128,14 +128,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0971197129D95D7D00D00134 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				09B6293729E08D5000C9B0EB /* Transaction */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
 		0971197929D99C8500D00134 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				09B6293829E08D7C00C9B0EB /* Transaction+Defines.swift */,
+				0971196F29D95D5600D00134 /* Model */,
 				0960B78429E1777F00908B32 /* Transaction+ViewModel.swift */,
 				0971197929D99C8500D00134 /* TransactionList */,
 				0971197A29D99C8F00D00134 /* TransactionDetails */,
@@ -189,9 +182,8 @@
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
 				096B55B429E070DA00326E61 /* PaybackCommon */,
 				0971196E29D95D4600D00134 /* Service */,
-				0971196F29D95D5600D00134 /* Model */,
+				09B6293729E08D5000C9B0EB /* Transaction */,
 				0971197029D95D6C00D00134 /* ViewModel */,
-				0971197129D95D7D00D00134 /* Scene */,
 				09D02D5529D9599F0075198D /* Assets.xcassets */,
 				09D02D5729D9599F0075198D /* Preview Content */,
 			);
