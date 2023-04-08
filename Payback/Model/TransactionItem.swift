@@ -1,5 +1,5 @@
 //
-//  Transaction.swift
+//  TransactionItem.swift
 //  Payback
 //
 //  Created by Pronin Oleksandr on 02.04.23.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Transaction: Decodable, Identifiable {
-    let id: UUID
+public struct TransactionItem: Decodable, Identifiable {
+    public let id: UUID
     let partnerDisplayName: String
     let alias: Alias
     let category: Int

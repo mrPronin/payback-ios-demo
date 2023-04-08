@@ -8,10 +8,14 @@
 import SwiftUI
 import PaybackCommon
 
-struct TransactionListView: View {
+struct TransactionListView<VM: TransactionListViewModel>: View {
     
-    @StateObject var viewModel = TransactionListViewModel()
+    @StateObject var viewModel: VM
     @State private var dataLoaded = false
+    
+    public init(viewModel: VM) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationView {
@@ -69,6 +73,7 @@ struct TransactionListView: View {
 
 struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListView()
+        EmptyView()
+//        TransactionListView()
     }
 }

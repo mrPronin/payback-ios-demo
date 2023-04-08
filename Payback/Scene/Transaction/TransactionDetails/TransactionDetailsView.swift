@@ -9,7 +9,7 @@ import SwiftUI
 import PaybackCommon
 
 struct TransactionDetailsView: View {
-    let transaction: Transaction
+    let transaction: TransactionItem
     
     var body: some View {
         VStack {
@@ -69,7 +69,7 @@ struct TransactionDetailsView: View {
 
 struct Previews_TransactionDetailsView_Previews: PreviewProvider {
     
-    static var transaction: Transaction {
+    static var transaction: TransactionItem {
         let json = """
             {
               "partnerDisplayName": "REWE Group",
@@ -90,7 +90,7 @@ struct Previews_TransactionDetailsView_Previews: PreviewProvider {
         let jsonData = json.data(using: .utf8)!
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        return try! decoder.decode(Transaction.self, from: jsonData)
+        return try! decoder.decode(TransactionItem.self, from: jsonData)
     }
     
     static var previews: some View {

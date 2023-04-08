@@ -9,7 +9,7 @@ import Foundation
 import Network
 import PaybackCommon
 
-final class TransactionListViewModel: ObservableObject {
+final class TransactionListViewModelOld: ObservableObject {
     
     @Published private(set) var isLoading = false
     @Published var bannerData: BannerViewModifier.BannerData? = nil
@@ -20,7 +20,7 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
     
-    var filteredTransactions: [Transaction] {
+    var filteredTransactions: [TransactionItem] {
         guard selectedCategoryFilter != -1 else {
             return transactions
         }
@@ -44,11 +44,18 @@ final class TransactionListViewModel: ObservableObject {
         
         await set(isLoading: true)
         
-        if /*Bool.random()*/ false {
+         /*
+         User Story 3.
+         As a user of the App, I want to get feedback when loading of the transactions is ongoing or an Error occurs. (Just delay the mocked server response for 1-2 seconds and randomly fail it)
+        */
+        /*
+         if Bool.random() {
             await set(isLoading: false)
             await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Some network error", type: .error))
             return
         }
+        */
+        
         guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
             await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Failed to load JSON data", type: .error))
             return
@@ -95,7 +102,7 @@ final class TransactionListViewModel: ObservableObject {
     private var isNetworkAvailable = true
     private let monitor: NWPathMonitor
     private let queue = DispatchQueue(label: "NetworkMonitor")
-    private var transactions = [Transaction]()
+    private var transactions = [TransactionItem]()
     
     @MainActor
     private func set(isLoading: Bool) {

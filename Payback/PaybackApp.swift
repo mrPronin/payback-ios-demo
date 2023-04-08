@@ -11,7 +11,8 @@ import SwiftUI
 struct PaybackApp: App {
     var body: some Scene {
         WindowGroup {
-            TransactionListView()
+            EmptyView()
+//            TransactionListView()
         }
     }
 }

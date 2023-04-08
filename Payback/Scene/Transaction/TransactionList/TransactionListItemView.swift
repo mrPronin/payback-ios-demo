@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionListItemView: View {
     
-    let transaction: Transaction
+    let transaction: TransactionItem
     
     var body: some View {
         NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
