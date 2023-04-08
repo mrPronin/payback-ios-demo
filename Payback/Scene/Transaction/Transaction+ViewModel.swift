@@ -84,7 +84,6 @@ extension Transaction {
             
             self.reachabilityService.publisher
                 .sink { status in
-                    print(status)
                     Task { [weak self] in
                         self?.isNetworkAvailable = status == .satisfied
                         guard status == .satisfied else {
