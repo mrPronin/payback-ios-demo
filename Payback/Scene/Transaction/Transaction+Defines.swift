@@ -15,6 +15,7 @@ public enum Transaction {}
 public typealias TransactionDetailsProvider<Details: View> = (TransactionItem) -> Details
 
 public protocol TransactionListViewModel: ObservableObject {
+    associatedtype DetailsView: View
     var isLoading: Bool { get }
     var bannerData: BannerViewModifier.BannerData? { get set }
     var categoryFilterPickerOptions: [(id: Int, title: String)] { get }
@@ -23,4 +24,5 @@ public protocol TransactionListViewModel: ObservableObject {
     var filteredTransactionsTotal: Double { get }
     var transactionsCurrency: String { get }
     func fetchTransactions() async
+    var detailsProvider: TransactionDetailsProvider<DetailsView> { get }
 }

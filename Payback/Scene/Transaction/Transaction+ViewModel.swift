@@ -8,9 +8,10 @@
 import Foundation
 import PaybackCommon
 import Combine
+import SwiftUI
 
 extension Transaction {
-    class ViewModel: TransactionListViewModel {
+    class ViewModel<DetailsView: View>: TransactionListViewModel {
         
         // MARK: - Public
         @Published private(set) var isLoading = false
@@ -71,16 +72,20 @@ extension Transaction {
             await set(isLoading: false)
         }
         
+        let detailsProvider: TransactionDetailsProvider<DetailsView>
+        
         // MARK: - Init
         
         init(
             transactionService: TransactionService,
             translationService: TranslationService,
-            reachabilityService: ReachabilityService
+            reachabilityService: ReachabilityService,
+            detailsProvider: @escaping TransactionDetailsProvider<DetailsView>
         ) {
             self.transactionService = transactionService
             self.translationService = translationService
             self.reachabilityService = reachabilityService
+            self.detailsProvider = detailsProvider
             
             self.reachabilityService.publisher
                 .sink { status in

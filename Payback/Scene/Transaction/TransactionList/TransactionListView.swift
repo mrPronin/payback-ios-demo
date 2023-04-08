@@ -31,7 +31,10 @@ struct TransactionListView<VM: TransactionListViewModel>: View {
                 
                 ZStack {
                     List(viewModel.filteredTransactions) { transaction in
-                        TransactionListItemView(transaction: transaction)
+                        TransactionListItemView(
+                            transaction: transaction,
+                            detailsProvider: viewModel.detailsProvider
+                        )
                     }
                     .padding(.top, 0)
                     .background(Color.brandBackground)
@@ -75,8 +78,7 @@ struct TransactionListView_Previews: PreviewProvider {
     static let viewModel = Transaction.ViewModel(
         transactionService: TransactionServiceMock(),
         translationService: TranslationServiceMock(),
-        reachabilityService: ReachabilityServiceMock()
-    )
+        reachabilityService: ReachabilityServiceMock()) { transaction in Text("Details") }
     static var previews: some View {
         TransactionListView(viewModel: viewModel)
     }

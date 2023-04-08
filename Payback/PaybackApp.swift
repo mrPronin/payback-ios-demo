@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct PaybackApp: App {
+    
+    private static func goToDetails(transaction: TransactionItem) -> TransactionDetailsView { TransactionDetailsView(transaction: transaction) }
+    
     let viewModel = Transaction.ViewModel(
         transactionService: TransactionServiceMock(),
         translationService: TranslationServiceMock(),
-        reachabilityService: ReachabilityServiceMock()
+        reachabilityService: ReachabilityServiceMock(),
+        detailsProvider: goToDetails
     )
 
     var body: some Scene {

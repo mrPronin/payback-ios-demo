@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct TransactionListItemView: View {
+struct TransactionListItemView<DetailsView: View>: View {
     
     let transaction: TransactionItem
+    let detailsProvider: TransactionDetailsProvider<DetailsView>
     
     var body: some View {
-        NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
+        NavigationLink(destination: detailsProvider(transaction)) {
             VStack(alignment: .leading) {
                 Text(transaction.partnerDisplayName)
                     .font(.headline)
