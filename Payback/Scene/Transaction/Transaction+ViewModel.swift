@@ -84,13 +84,14 @@ extension Transaction {
             
             self.reachabilityService.publisher
                 .sink { status in
+                    print(status)
                     Task { [weak self] in
                         self?.isNetworkAvailable = status == .satisfied
                         guard status == .satisfied else {
-                            await self?.set(bannerData: nil)
+                            await self?.set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Network is not available", type: .error))
                             return
                         }
-                        await self?.set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Network is not available", type: .error))
+                        await self?.set(bannerData: nil)
                     }
                 }
                 .store(in: &cancellables)
