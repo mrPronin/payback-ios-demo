@@ -83,10 +83,10 @@ extension Transaction {
             self.reachabilityService = reachabilityService
             
             self.reachabilityService.publisher
-                .sink { path in
+                .sink { status in
                     Task { [weak self] in
-                        self?.isNetworkAvailable = path.status == .satisfied
-                        guard path.status == .satisfied else {
+                        self?.isNetworkAvailable = status == .satisfied
+                        guard status == .satisfied else {
                             await self?.set(bannerData: nil)
                             return
                         }

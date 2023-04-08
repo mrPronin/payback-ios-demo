@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0960B78329E16F2900908B32 /* TransactionService+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960B78229E16F2900908B32 /* TransactionService+Protocol.swift */; };
 		0960B78529E1777F00908B32 /* Transaction+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960B78429E1777F00908B32 /* Transaction+ViewModel.swift */; };
+		0960B78829E17EA000908B32 /* TransactionService+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960B78729E17EA000908B32 /* TransactionService+Mock.swift */; };
+		0960B78A29E1832700908B32 /* TranslationService+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960B78929E1832700908B32 /* TranslationService+Mock.swift */; };
+		0960B78C29E183C100908B32 /* ReachabilityService+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960B78B29E183C100908B32 /* ReachabilityService+Mock.swift */; };
 		096B55B729E0728100326E61 /* PaybackCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 096B55B629E0728100326E61 /* PaybackCommon */; };
 		096DDB4129E099E600D66BDB /* TranslationService+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DDB4029E099E600D66BDB /* TranslationService+Protocol.swift */; };
 		096DDB4329E13F2C00D66BDB /* ReachabilityService+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DDB4229E13F2C00D66BDB /* ReachabilityService+Protocol.swift */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		0960B78229E16F2900908B32 /* TransactionService+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionService+Protocol.swift"; sourceTree = "<group>"; };
 		0960B78429E1777F00908B32 /* Transaction+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+ViewModel.swift"; sourceTree = "<group>"; };
+		0960B78729E17EA000908B32 /* TransactionService+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionService+Mock.swift"; sourceTree = "<group>"; };
+		0960B78929E1832700908B32 /* TranslationService+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationService+Mock.swift"; sourceTree = "<group>"; };
+		0960B78B29E183C100908B32 /* ReachabilityService+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReachabilityService+Mock.swift"; sourceTree = "<group>"; };
 		096B55B429E070DA00326E61 /* PaybackCommon */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackCommon; sourceTree = SOURCE_ROOT; };
 		096DDB4029E099E600D66BDB /* TranslationService+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationService+Protocol.swift"; sourceTree = "<group>"; };
 		096DDB4229E13F2C00D66BDB /* ReachabilityService+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReachabilityService+Protocol.swift"; sourceTree = "<group>"; };
@@ -77,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0960B78629E17E8B00908B32 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0960B78729E17EA000908B32 /* TransactionService+Mock.swift */,
+				0960B78929E1832700908B32 /* TranslationService+Mock.swift */,
+				0960B78B29E183C100908B32 /* ReachabilityService+Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		096B55B529E0728100326E61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +106,7 @@
 				0960B78229E16F2900908B32 /* TransactionService+Protocol.swift */,
 				096DDB4029E099E600D66BDB /* TranslationService+Protocol.swift */,
 				096DDB4229E13F2C00D66BDB /* ReachabilityService+Protocol.swift */,
+				0960B78629E17E8B00908B32 /* Mock */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -302,8 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0960B78829E17EA000908B32 /* TransactionService+Mock.swift in Sources */,
 				0960B78329E16F2900908B32 /* TransactionService+Protocol.swift in Sources */,
+				0960B78C29E183C100908B32 /* ReachabilityService+Mock.swift in Sources */,
 				096DDB4329E13F2C00D66BDB /* ReachabilityService+Protocol.swift in Sources */,
+				0960B78A29E1832700908B32 /* TranslationService+Mock.swift in Sources */,
 				0971197829D9607400D00134 /* TransactionList.swift in Sources */,
 				0960B78529E1777F00908B32 /* Transaction+ViewModel.swift in Sources */,
 				09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */,

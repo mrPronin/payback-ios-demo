@@ -9,5 +9,5 @@ import Combine
 import Network
 
 public protocol ReachabilityService {
-    var publisher: AnyPublisher<NWPath, Never> { get }
+    var publisher: AnyPublisher<NWPath.Status, Never> { get }
 }
