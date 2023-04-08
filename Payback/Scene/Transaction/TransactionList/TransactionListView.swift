@@ -72,8 +72,12 @@ struct TransactionListView<VM: TransactionListViewModel>: View {
 }
 
 struct TransactionListView_Previews: PreviewProvider {
+    static let viewModel = Transaction.ViewModel(
+        transactionService: TransactionServiceMock(),
+        translationService: TranslationServiceMock(),
+        reachabilityService: ReachabilityServiceMock()
+    )
     static var previews: some View {
-        EmptyView()
-//        TransactionListView()
+        TransactionListView(viewModel: viewModel)
     }
 }

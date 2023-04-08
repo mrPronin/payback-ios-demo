@@ -27,13 +27,18 @@ struct TransactionServiceMock: TransactionService {
         guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
             return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
         }
+        guard let jsonData = try? Data(contentsOf: url) else {
+            return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
+        }
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        guard let decodedData = try? decoder.decode(TransactionList.self, from: jsonData) else {
+            return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
+        }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: TransactionList.self, decoder: JSONDecoder())
+        return Just(decodedData)
+            .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }
 }

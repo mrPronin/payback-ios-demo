@@ -9,10 +9,15 @@ import SwiftUI
 
 @main
 struct PaybackApp: App {
+    let viewModel = Transaction.ViewModel(
+        transactionService: TransactionServiceMock(),
+        translationService: TranslationServiceMock(),
+        reachabilityService: ReachabilityServiceMock()
+    )
+
     var body: some Scene {
         WindowGroup {
-            EmptyView()
-//            TransactionListView()
+            TransactionListView(viewModel: viewModel)
         }
     }
 }
