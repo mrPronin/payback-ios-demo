@@ -16,9 +16,9 @@ struct PaybackApp: App {
     }
     
     let viewModel = Transaction.ViewModel(
-        transactionService: TransactionServiceMock(),
-        translationService: TranslationServiceMock(),
-        reachabilityService: ReachabilityServiceMock(),
+        transactionService: Transaction.ServiceMock(),
+        translationService: Translation.ServiceMock(),
+        reachabilityService: Reachability.ServiceMock(),
         detailsProvider: goToDetails
     )
 

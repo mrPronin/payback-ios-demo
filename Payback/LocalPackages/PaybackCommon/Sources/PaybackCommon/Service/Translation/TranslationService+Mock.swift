@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct TranslationServiceMock: TranslationService {
-    public init() {}
-    public func localizedString(with key: String) -> String { key }
+public extension Translation {
+    struct ServiceMock: TranslationService {
+        public init() {}
+        public func localizedString(with key: String) -> String { key }
+    }
 }

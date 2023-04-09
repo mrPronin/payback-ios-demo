@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TransactionItem: Decodable, Identifiable {
+public struct TransactionItem: Codable, Identifiable {
     public let id: UUID
     public let partnerDisplayName: String
     public let alias: Alias
@@ -31,16 +31,16 @@ public struct TransactionItem: Decodable, Identifiable {
         transactionDetail = try container.decode(TransactionDetail.self, forKey: .transactionDetail)
     }
 
-    public struct Alias: Decodable {
+    public struct Alias: Codable {
         public let reference: String
     }
 
-    public struct TransactionDetail: Decodable {
+    public struct TransactionDetail: Codable {
         public let description: String?
         public let bookingDate: Date
         public let value: Value
 
-        public struct Value: Decodable {
+        public struct Value: Codable {
             public let amount: Double
             public let currency: String
         }

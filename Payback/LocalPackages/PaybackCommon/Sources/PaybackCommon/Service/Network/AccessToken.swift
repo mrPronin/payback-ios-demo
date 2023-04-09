@@ -7,6 +7,9 @@
 
 import Foundation
 
-struct AccessToken: RawRepresentable {
-    var rawValue: String
+public struct AccessToken: RawRepresentable {
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
+    public var rawValue: String
 }

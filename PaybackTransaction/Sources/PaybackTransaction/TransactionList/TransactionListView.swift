@@ -139,8 +139,8 @@ struct TransactionListView_Previews: PreviewProvider {
     }
     static let viewModel = Transaction.ViewModel(
         transactionService: TransactionServiceMock(),
-        translationService: TranslationServiceMock(),
-        reachabilityService: ReachabilityServiceMock()) { transaction in Text("Details") }
+        translationService: Translation.ServiceMock(),
+        reachabilityService: Reachability.ServiceMock()) { transaction in Text("Details") }
     static var previews: some View {
         TransactionListView(viewModel: viewModel)
     }

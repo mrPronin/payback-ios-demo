@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import PaybackCommon
 
-extension Network {
+public extension Network {
     enum HTTPMethod: String {
         case get     = "GET"
         case post    = "POST"

@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import PaybackCommon
 
-struct Endpoint<Kind: EndpointKind, Response: Codable, Payload: Encodable> {
+public struct Endpoint<Kind: EndpointKind, Response: Codable, Payload: Encodable> {
     let method: Network.HTTPMethod
     let path: String
     let queryItems: [URLQueryItem]?
     let payload: Payload?
-    init(
+    public init(
         path: String,
         method: Network.HTTPMethod = .get,
         queryItems: [URLQueryItem]? = nil,

@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct TransactionList: Decodable {
+public struct TransactionList: Codable {
     public let items: [TransactionItem]
 }

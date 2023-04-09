@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PaybackCommon
 
 struct URLHost: RawRepresentable {
     var rawValue: String

@@ -8,3 +8,5 @@
 import Foundation
 
 public enum Network {}
+public enum Reachability {}
+public enum Translation {}

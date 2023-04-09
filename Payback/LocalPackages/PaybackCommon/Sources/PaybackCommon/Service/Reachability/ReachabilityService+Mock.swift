@@ -8,9 +8,11 @@
 import Combine
 import Network
 
-public struct ReachabilityServiceMock: ReachabilityService {
-    public init() {}
-    public var publisher: AnyPublisher<NWPath.Status, Never> {
-        return Just(.satisfied).eraseToAnyPublisher()
+public extension Reachability {
+    struct ServiceMock: ReachabilityService {
+        public init() {}
+        public var publisher: AnyPublisher<NWPath.Status, Never> {
+            return Just(.satisfied).eraseToAnyPublisher()
+        }
     }
 }
