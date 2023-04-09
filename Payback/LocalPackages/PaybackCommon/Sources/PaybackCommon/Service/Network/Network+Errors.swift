@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Network {
-    enum Errors: LocalizedError, Equatable {
+    enum Errors: Error, Equatable {
         case invalidURL
         case badRequest
         case unauthorized
@@ -37,46 +37,22 @@ public extension Network {
 }
 
 // MARK: - LocalizedError
-extension Network.Errors {
+extension Network.Errors: LocalizedError {
     public var errorDescription: String? {
         switch self {
-            // "Network error. Invalid URL."
-            // "Netzwerkfehler. Ungültige URL."
-        case .invalidURL: return "Network error. Invalid URL."
-            // "Network error. Bad request."
-            // "Netzwerkfehler. Ungültige Anfrage."
-        case .badRequest: return "Network error. Bad request."
-            // "Network error. Unauthorized."
-            // "Netzwerkfehler. Nicht autorisiert."
-        case .unauthorized: return "Network error. Unauthorized."
-            // "Network error. Forbidden."
-            // "Netzwerkfehler. Verboten."
-        case .forbidden: return "Network error. Forbidden."
-            // "Network error. Link not found."
-            // "Netzwerkfehler. Link nicht gefunden."
-        case .notFound: return "Network error. Link not found."
-            // "Network error \(code)"
-            // "Netzwerkfehler \(code)"
-        case .error4xx(let code): return "Network error \(code)"
-            // "Network error. Server exception."
-            // "Netzwerkfehler. Serverfehler."
-        case .serverError: return "Network error. Server exception."
-            // "Network error \(code)"
-            // "Netzwerkfehler \(code)"
-        case .error5xx(let code): return "Network error \(code)"
-            // "Network error. Decoding failed."
-            // "Netzwerkfehler. Decodierung fehlgeschlagen."
-        case .decodingError: return "Network error. Decoding failed."
-            // "Network error. URL session failed with \(error)"
-            // "Netzwerkfehler. URL-Sitzung fehlgeschlagen mit \(error)"
-        case .urlSessionFailed(let error): return "Network error. URL session failed with error! \(error.localizedDescription)"
-            // "Network error. Unknown."
-            // "Netzwerkfehler. Unbekannt."
-        case .unknownError: return "Network error. Unknown."
-            // "Network error. Other: \(error.localizedDescription)"
-            // "Netzwerkfehler. Andere: \(error.localizedDescription)"
+        case .invalidURL: return NSLocalizedString("network_error_invalid_url", bundle: .module, comment: "")
+        case .badRequest: return NSLocalizedString("network_error_bad_request", bundle: .module, comment: "")
+        case .unauthorized: return NSLocalizedString("network_error_unauthorized", bundle: .module, comment: "")
+        case .forbidden: return NSLocalizedString("network_error_forbidden", bundle: .module, comment: "")
+        case .notFound: return NSLocalizedString("network_error_link_not_found", bundle: .module, comment: "")
+        case .error4xx(let code): return String.localizedStringWithFormat(NSLocalizedString("network_error_with_code", bundle: .module, comment: ""), "\(code)")
+        case .serverError: return NSLocalizedString("network_error_server_exception", bundle: .module, comment: "")
+        case .error5xx(let code): return String.localizedStringWithFormat(NSLocalizedString("network_error_with_code", bundle: .module, comment: ""), "\(code)")
+        case .decodingError: return NSLocalizedString("network_error_decoding_failed", bundle: .module, comment: "")
+        case .urlSessionFailed(let error): return String.localizedStringWithFormat(NSLocalizedString("network_error_url_session_failed_with_error", bundle: .module, comment: ""), "\(error.localizedDescription)")
+        case .unknownError: return NSLocalizedString("network_error_unknown", bundle: .module, comment: "")
         case .other(description: let description):
-            return "Network error. Other: \(description)"
+            return String.localizedStringWithFormat(NSLocalizedString("network_error_url_session_failed_with_error", bundle: .module, comment: ""), "\(description)")
         }
     }
 }
