@@ -82,13 +82,6 @@
 			path = Recources;
 			sourceTree = "<group>";
 		};
-		092A66C029E35E4400B37AB3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		0960B78D29E2AB9600908B32 /* LocalPackages */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +127,6 @@
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
 				092A66B929E3561000B37AB3 /* FeatureFlags.swift */,
 				0960B78D29E2AB9600908B32 /* LocalPackages */,
-				092A66C029E35E4400B37AB3 /* View */,
 				092A66B829E3340800B37AB3 /* Recources */,
 				09D02D5729D9599F0075198D /* Preview Content */,
 			);
