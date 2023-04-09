@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PaybackCommon
+import PaybackTransaction
 
 @main
 struct PaybackApp: App {

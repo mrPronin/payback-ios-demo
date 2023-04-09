@@ -6,42 +6,41 @@
 //
 
 import Foundation
-import PaybackTransaction
 import Combine
 import SwiftUI
 
-extension PaybackCommon.Transaction {
+public extension PaybackCommon.Transaction {
     class ViewModel<DetailsView: View>: TransactionListViewModel {
         
         // MARK: - Public
-        @Published private(set) var isLoading = false
-        @Published var bannerData: BannerViewModifier.BannerData? = nil
-        @Published private(set) var categoryFilterPickerOptions: [(id: Int, title: String)] = []
-        @Published var selectedCategoryFilter: Int = -1 {
+        @Published private(set) public var isLoading = false
+        @Published public var bannerData: BannerViewModifier.BannerData? = nil
+        @Published private(set) public var categoryFilterPickerOptions: [(id: Int, title: String)] = []
+        @Published public var selectedCategoryFilter: Int = -1 {
             didSet {
                 objectWillChange.send()
             }
         }
         
-        var filteredTransactions: [TransactionItem] {
+        public var filteredTransactions: [TransactionItem] {
             guard selectedCategoryFilter != -1 else {
                 return transactions
             }
             return transactions.filter { $0.category == selectedCategoryFilter }
         }
         
-        var filteredTransactionsTotal: Double {
+        public var filteredTransactionsTotal: Double {
             return filteredTransactions.reduce(0.0) { $0 + $1.transactionDetail.value.amount }
         }
 
-        var transactionsCurrency: String {
+        public var transactionsCurrency: String {
             guard let currency = Array(Set(filteredTransactions.map(\.transactionDetail.value.currency))).first else {
                 return ""
             }
             return currency
         }
         
-        func fetchTransactions() async {
+        public func fetchTransactions() async {
             guard isNetworkAvailable else { return }
             await set(isLoading: true)
             
@@ -72,11 +71,11 @@ extension PaybackCommon.Transaction {
             await set(isLoading: false)
         }
         
-        let detailsProvider: TransactionDetailsProvider<DetailsView>
+        public let detailsProvider: TransactionDetailsProvider<DetailsView>
         
         // MARK: - Init
         
-        init(
+        public init(
             transactionService: TransactionService,
             translationService: TranslationService,
             reachabilityService: ReachabilityService,

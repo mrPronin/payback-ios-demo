@@ -8,7 +8,7 @@
 import SwiftUI
 import PaybackCommon
 
-struct TransactionListView<VM: TransactionListViewModel>: View {
+public struct TransactionListView<VM: TransactionListViewModel>: View {
     
     @StateObject var viewModel: VM
     @State private var dataLoaded = false
@@ -17,7 +17,7 @@ struct TransactionListView<VM: TransactionListViewModel>: View {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             VStack {
                 Picker("Category", selection: $viewModel.selectedCategoryFilter) {

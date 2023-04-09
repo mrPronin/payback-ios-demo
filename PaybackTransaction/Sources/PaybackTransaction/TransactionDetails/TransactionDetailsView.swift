@@ -8,10 +8,14 @@
 import SwiftUI
 import PaybackCommon
 
-struct TransactionDetailsView: View {
+public struct TransactionDetailsView: View {
     let transaction: TransactionItem
     
-    var body: some View {
+    public init(transaction: TransactionItem) {
+        self.transaction = transaction
+    }
+    
+    public var body: some View {
         VStack {
             HStack {
                 Text("Partner display name:")

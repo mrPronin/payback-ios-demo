@@ -8,12 +8,17 @@
 import SwiftUI
 import PaybackCommon
 
-struct TransactionListItemView<DetailsView: View>: View {
+public struct TransactionListItemView<DetailsView: View>: View {
     
     let transaction: TransactionItem
     let detailsProvider: TransactionDetailsProvider<DetailsView>
     
-    var body: some View {
+    init(transaction: TransactionItem, detailsProvider: @escaping TransactionDetailsProvider<DetailsView>) {
+        self.transaction = transaction
+        self.detailsProvider = detailsProvider
+    }
+    
+    public var body: some View {
         NavigationLink(destination: detailsProvider(transaction)) {
             VStack(alignment: .leading) {
                 Text(transaction.partnerDisplayName)
