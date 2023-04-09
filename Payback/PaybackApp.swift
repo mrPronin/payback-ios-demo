@@ -15,7 +15,7 @@ struct PaybackApp: App {
         TransactionDetailsView(transaction: transaction, translationService: translation)
     }
     
-    // We could reuse this service in other features later as well
+    // We could reuse this services in other features later as well
     private static let reachability = Reachability.Service()
     private static let translation = Translation.Service()
     

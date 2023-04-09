@@ -25,7 +25,7 @@ public struct Endpoint<Kind: EndpointKind, Response: Codable, Payload: Encodable
     }
 }
 
-extension Endpoint {
+public extension Endpoint {
     func makeRequest(with data: Kind.RequestData?, host: URLHost = .default) -> URLRequest? {
         var components = URLComponents()
         components.scheme = "https"

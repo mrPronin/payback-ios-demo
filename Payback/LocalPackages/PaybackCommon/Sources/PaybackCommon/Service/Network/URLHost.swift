@@ -7,11 +7,14 @@
 
 import Foundation
 
-struct URLHost: RawRepresentable {
-    var rawValue: String
+public struct URLHost: RawRepresentable {
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
+    public var rawValue: String
 }
 
-extension URLHost {
+public extension URLHost {
     static var test: Self {
         URLHost(rawValue: Constants.baseURLTest)
     }
