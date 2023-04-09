@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import PaybackCommon
 
 public struct TransactionListView<VM: TransactionListViewModel>: View {
@@ -75,6 +76,67 @@ public struct TransactionListView<VM: TransactionListViewModel>: View {
 }
 
 struct TransactionListView_Previews: PreviewProvider {
+    struct TransactionServiceMock: TransactionService {
+        var transactions: AnyPublisher<TransactionList, Error> {
+            let json = """
+            {
+                "items": [
+                    {
+                      "partnerDisplayName": "REWE Group",
+                      "alias": {
+                        "reference": "795357452000810"
+                      },
+                      "category": 1,
+                      "transactionDetail": {
+                        "description": "Punkte sammeln",
+                        "bookingDate": "2022-07-24T10:59:05+0200",
+                        "value": {
+                          "amount": 124,
+                          "currency": "PBP"
+                        }
+                      }
+                    },
+                    {
+                      "partnerDisplayName": "dm-dogerie markt",
+                      "alias": {
+                        "reference": "098193809705561"
+                      },
+                      "category": 1,
+                      "transactionDetail": {
+                        "description": "Punkte sammeln",
+                        "bookingDate": "2022-06-23T10:59:05+0200",
+                        "value": {
+                          "amount": 1240,
+                          "currency": "PBP"
+                        }
+                      }
+                    },
+                    {
+                      "partnerDisplayName": "OTTO Group",
+                      "alias": {
+                        "reference": "094844835601044"
+                      },
+                      "category": 2,
+                      "transactionDetail": {
+                        "bookingDate": "2022-07-22T10:59:05+0200",
+                        "value": {
+                          "amount": 53,
+                          "currency": "PBP"
+                        }
+                      }
+                    }
+                ]
+            }
+            """
+            let jsonData = json.data(using: .utf8)!
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let decodecData = try! decoder.decode(TransactionList.self, from: jsonData)
+            return Just(decodecData)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        }
+    }
     static let viewModel = Transaction.ViewModel(
         transactionService: TransactionServiceMock(),
         translationService: TranslationServiceMock(),

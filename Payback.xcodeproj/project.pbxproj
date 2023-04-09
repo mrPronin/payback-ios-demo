@@ -91,13 +91,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		09B6293729E08D5000C9B0EB /* Transaction */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transaction;
-			sourceTree = "<group>";
-		};
 		09D02D4529D9599E0075198D = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +116,6 @@
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
 				0960B78D29E2AB9600908B32 /* LocalPackages */,
 				0971196E29D95D4600D00134 /* Service */,
-				09B6293729E08D5000C9B0EB /* Transaction */,
 				0971197029D95D6C00D00134 /* ViewModel */,
 				09D02D5529D9599F0075198D /* Assets.xcassets */,
 				09D02D5729D9599F0075198D /* Preview Content */,
