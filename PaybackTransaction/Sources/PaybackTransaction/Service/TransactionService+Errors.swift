@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TransactionService+Errors.swift
 //  
 //
 //  Created by Pronin Oleksandr on 09.04.23.

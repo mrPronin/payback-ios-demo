@@ -15,10 +15,13 @@ struct PaybackApp: App {
         TransactionDetailsView(transaction: transaction)
     }
     
+    // We could reuse this service in other features later as well
+    private static let reachability = Reachability.Service()
+    
     let viewModel = Transaction.ViewModel(
         transactionService: Transaction.ServiceMock(),
         translationService: Translation.ServiceMock(),
-        reachabilityService: Reachability.ServiceMock(),
+        reachabilityService: reachability,
         detailsProvider: goToDetails
     )
 
