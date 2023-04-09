@@ -19,7 +19,7 @@ struct PaybackApp: App {
     private static let reachability = Reachability.Service()
     private static let translation = Translation.Service()
     
-    let viewModel = Transaction.ViewModel(
+    let transactionViewModel = Transaction.ViewModel(
         transactionService: Transaction.ServiceMock(),
         translationService: translation,
         reachabilityService: reachability,
@@ -28,7 +28,71 @@ struct PaybackApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TransactionListView(viewModel: viewModel)
+            if FeatureFlags.tabbarEnabled {
+                Tabbar(tabProviders: tabProviders)
+            } else {
+                TransactionListView(viewModel: transactionViewModel)
+            }
         }
+    }
+    
+    var tabProviders: [TabViewProvider] {
+        var tabProviders = [TabViewProvider]()
+        
+        if FeatureFlags.transactionEnabled {
+            tabProviders.append(transactionTabProvider)
+        }
+        
+        if FeatureFlags.feedEnabled {
+            tabProviders.append(feedTabProvider)
+        }
+        
+        if FeatureFlags.onlineShoppingEnabled {
+            tabProviders.append(onlineShoppingTabProvider)
+        }
+        
+        if FeatureFlags.settingsEnabled {
+            tabProviders.append(settingsTabProvider)
+        }
+
+        return tabProviders
+    }
+    
+    var transactionTabProvider: TabViewProvider {
+        return .init(
+            systemImageName: "repeat.1.circle",
+            tabName: "Transactions") {
+                return TransactionListView(viewModel: transactionViewModel).erased
+            }
+    }
+    
+    var feedTabProvider: TabViewProvider {
+        return .init(
+            systemImageName: "server.rack",
+            tabName: "Feed") {
+                return FeedView().erased
+            }
+    }
+    
+    var onlineShoppingTabProvider: TabViewProvider {
+        return .init(
+            systemImageName: "cart.circle.fill",
+            tabName: "Online shopping") {
+                return OnlineShoppingView().erased
+            }
+    }
+    
+    var settingsTabProvider: TabViewProvider {
+        return .init(
+            systemImageName: "gear.circle",
+            tabName: "Settings") {
+                return SettingsView().erased
+            }
+    }
+}
+
+extension View {
+    var erased: AnyView {
+        return AnyView(self)
     }
 }

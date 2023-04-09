@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092A66BA29E3561000B37AB3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66B929E3561000B37AB3 /* FeatureFlags.swift */; };
+		092A66BD29E35AB800B37AB3 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66BC29E35AB800B37AB3 /* TabbarItem.swift */; };
+		092A66BF29E35B0D00B37AB3 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66BE29E35B0D00B37AB3 /* Tabbar.swift */; };
+		092A66C229E35E6F00B37AB3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66C129E35E6F00B37AB3 /* FeedView.swift */; };
+		092A66C429E35EE500B37AB3 /* OnlineShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66C329E35EE500B37AB3 /* OnlineShoppingView.swift */; };
+		092A66C629E35F0A00B37AB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66C529E35F0A00B37AB3 /* SettingsView.swift */; };
 		0960B79029E2BD1F00908B32 /* PaybackTransaction in Frameworks */ = {isa = PBXBuildFile; productRef = 0960B78F29E2BD1F00908B32 /* PaybackTransaction */; };
 		096B55B729E0728100326E61 /* PaybackCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 096B55B629E0728100326E61 /* PaybackCommon */; };
 		0971198029D9A1C600D00134 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0971197F29D9A1C600D00134 /* PBTransactions.json */; };
@@ -28,6 +34,12 @@
 
 /* Begin PBXFileReference section */
 		092A66B729E333ED00B37AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		092A66B929E3561000B37AB3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		092A66BC29E35AB800B37AB3 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
+		092A66BE29E35B0D00B37AB3 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		092A66C129E35E6F00B37AB3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		092A66C329E35EE500B37AB3 /* OnlineShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineShoppingView.swift; sourceTree = "<group>"; };
+		092A66C529E35F0A00B37AB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0960B78E29E2ABD100908B32 /* PaybackTransaction */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackTransaction; sourceTree = SOURCE_ROOT; };
 		096B55B429E070DA00326E61 /* PaybackCommon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackCommon; path = Payback/LocalPackages/PaybackCommon; sourceTree = SOURCE_ROOT; };
 		0971197F29D9A1C600D00134 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = SOURCE_ROOT; };
@@ -68,6 +80,25 @@
 			path = Recources;
 			sourceTree = "<group>";
 		};
+		092A66BB29E35AA100B37AB3 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				092A66BC29E35AB800B37AB3 /* TabbarItem.swift */,
+				092A66BE29E35B0D00B37AB3 /* Tabbar.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		092A66C029E35E4400B37AB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				092A66C129E35E6F00B37AB3 /* FeedView.swift */,
+				092A66C329E35EE500B37AB3 /* OnlineShoppingView.swift */,
+				092A66C529E35F0A00B37AB3 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0960B78D29E2AB9600908B32 /* LocalPackages */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,13 +113,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0971196E29D95D4600D00134 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		09D02D4529D9599E0075198D = {
@@ -114,8 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
+				092A66B929E3561000B37AB3 /* FeatureFlags.swift */,
+				092A66BB29E35AA100B37AB3 /* Tabbar */,
 				0960B78D29E2AB9600908B32 /* LocalPackages */,
-				0971196E29D95D4600D00134 /* Service */,
+				092A66C029E35E4400B37AB3 /* View */,
 				092A66B829E3340800B37AB3 /* Recources */,
 				09D02D5729D9599F0075198D /* Preview Content */,
 			);
@@ -245,7 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092A66C629E35F0A00B37AB3 /* SettingsView.swift in Sources */,
+				092A66C229E35E6F00B37AB3 /* FeedView.swift in Sources */,
+				092A66BA29E3561000B37AB3 /* FeatureFlags.swift in Sources */,
+				092A66BD29E35AB800B37AB3 /* TabbarItem.swift in Sources */,
+				092A66C429E35EE500B37AB3 /* OnlineShoppingView.swift in Sources */,
 				09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */,
+				092A66BF29E35B0D00B37AB3 /* Tabbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
