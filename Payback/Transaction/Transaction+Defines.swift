@@ -9,9 +9,6 @@ import SwiftUI
 import Combine
 import PaybackCommon
 
-// define namespace
-public enum Transaction {}
-
 public typealias TransactionDetailsProvider<Details: View> = (TransactionItem) -> Details
 
 public protocol TransactionListViewModel: ObservableObject {

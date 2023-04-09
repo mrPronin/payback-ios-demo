@@ -9,10 +9,10 @@ import Foundation
 
 public struct TransactionItem: Decodable, Identifiable {
     public let id: UUID
-    let partnerDisplayName: String
-    let alias: Alias
-    let category: Int
-    let transactionDetail: TransactionDetail
+    public let partnerDisplayName: String
+    public let alias: Alias
+    public let category: Int
+    public let transactionDetail: TransactionDetail
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -31,18 +31,18 @@ public struct TransactionItem: Decodable, Identifiable {
         transactionDetail = try container.decode(TransactionDetail.self, forKey: .transactionDetail)
     }
 
-    struct Alias: Decodable {
-        let reference: String
+    public struct Alias: Decodable {
+        public let reference: String
     }
 
-    struct TransactionDetail: Decodable {
-        let description: String?
-        let bookingDate: Date
-        let value: Value
+    public struct TransactionDetail: Decodable {
+        public let description: String?
+        public let bookingDate: Date
+        public let value: Value
 
-        struct Value: Decodable {
-            let amount: Double
-            let currency: String
+        public struct Value: Decodable {
+            public let amount: Double
+            public let currency: String
         }
     }
 }

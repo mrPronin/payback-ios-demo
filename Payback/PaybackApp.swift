@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import PaybackCommon
 
 @main
 struct PaybackApp: App {
     
     private static func goToDetails(transaction: TransactionItem) -> TransactionDetailsView { TransactionDetailsView(transaction: transaction) }
     
-    let viewModel = Transaction.ViewModel(
+    let viewModel = PaybackCommon.Transaction.ViewModel(
         transactionService: TransactionServiceMock(),
         translationService: TranslationServiceMock(),
         reachabilityService: ReachabilityServiceMock(),

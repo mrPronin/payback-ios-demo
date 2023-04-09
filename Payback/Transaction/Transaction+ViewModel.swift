@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import PaybackCommon
+import PaybackTransaction
 import Combine
 import SwiftUI
 
-extension Transaction {
+extension PaybackCommon.Transaction {
     class ViewModel<DetailsView: View>: TransactionListViewModel {
         
         // MARK: - Public

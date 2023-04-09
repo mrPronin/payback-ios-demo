@@ -24,8 +24,9 @@ extension Transaction.Errors {
     }
 }
 
-struct TransactionServiceMock: TransactionService {
-    var transactions: AnyPublisher<TransactionList, Error> {
+public struct TransactionServiceMock: TransactionService {
+    public init() {}
+    public var transactions: AnyPublisher<TransactionList, Error> {
         
         /*
         User Story 3.

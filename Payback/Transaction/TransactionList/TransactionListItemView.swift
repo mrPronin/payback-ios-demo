@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PaybackCommon
 
 struct TransactionListItemView<DetailsView: View>: View {
     

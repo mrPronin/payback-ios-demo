@@ -8,5 +8,5 @@
 import Foundation
 
 public struct TransactionList: Decodable {
-    let items: [TransactionItem]
+    public let items: [TransactionItem]
 }
