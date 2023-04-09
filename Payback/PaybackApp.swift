@@ -9,6 +9,7 @@ import SwiftUI
 import PaybackTransaction
 import Tabbar
 import PaybackFeed
+import PaybackOnlineShopping
 
 @main
 struct PaybackApp: App {

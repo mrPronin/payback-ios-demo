@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct OnlineShoppingView: View {
-    var body: some View {
+public struct OnlineShoppingView: View {
+    public init() {}
+    public var body: some View {
         Text("Online shopping feature")
     }
 }
