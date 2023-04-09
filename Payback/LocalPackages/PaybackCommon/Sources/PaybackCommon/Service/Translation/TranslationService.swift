@@ -18,3 +18,12 @@ public extension Translation {
         }
     }
 }
+
+public extension String {
+    var localized: String {
+        NSLocalizedString(self, bundle: .module, comment: "")
+    }
+    func localized(with argument: String) -> String {
+        return String.localizedStringWithFormat(NSLocalizedString(self, bundle: .module, comment: ""), "\(argument)")
+    }
+}

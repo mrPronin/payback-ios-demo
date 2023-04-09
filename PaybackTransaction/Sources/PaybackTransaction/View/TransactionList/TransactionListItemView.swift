@@ -23,7 +23,7 @@ public struct TransactionListItemView<DetailsView: View>: View {
             VStack(alignment: .leading) {
                 Text(transaction.partnerDisplayName)
                     .font(.headline)
-                Text(transaction.transactionDetail.description ?? "Description not provided")
+                Text(transaction.transactionDetail.description ?? "description_not_provided".localized)
                     .font(.subheadline)
                 HStack {
                     Text(transaction.transactionDetail.bookingDate, style: .date)

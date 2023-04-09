@@ -22,12 +22,14 @@ public protocol TransactionListViewModel: ObservableObject {
     var transactionsCurrency: String { get }
     func fetchTransactions() async
     var detailsProvider: TransactionDetailsProvider<DetailsView> { get }
+    var translationService: TranslationService { get }
 }
 
 public extension Transaction {
     class ViewModel<DetailsView: View>: TransactionListViewModel {
         
         // MARK: - Public
+        public let translationService: TranslationService
         @Published private(set) public var isLoading = false
         @Published public var bannerData: BannerViewModifier.BannerData? = nil
         @Published private(set) public var categoryFilterPickerOptions: [(id: Int, title: String)] = []
@@ -79,9 +81,9 @@ public extension Transaction {
                 }
                 self.transactions = transactions
                 let categories = Array(Set(transactions.map(\.category))).sorted()
-                await set(categoryFilterPickerOptions: [(-1, "All")] + categories.map { (id: $0, title: "Category \($0)") })
+                await set(categoryFilterPickerOptions: [(-1, translationService.localizedString(with: "transaction_list_all_categories"))] + categories.map { (id: $0, title: "\(translationService.localizedString(with: "transaction_list_category")) \($0)") })
             } catch {
-                await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: error.localizedDescription, type: .error))
+                await set(bannerData: BannerViewModifier.BannerData(title: translationService.localizedString(with: "error"), details: error.localizedDescription, type: .error))
             }
             await set(isLoading: false)
         }
@@ -106,7 +108,7 @@ public extension Transaction {
                     Task { [weak self] in
                         self?.isNetworkAvailable = status == .satisfied
                         guard status == .satisfied else {
-                            await self?.set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Network is not available", type: .error))
+                            await self?.set(bannerData: BannerViewModifier.BannerData(title: translationService.localizedString(with: "error"), details: translationService.localizedString(with: "error_notwork_is_not_available"), type: .error))
                             return
                         }
                         await self?.set(bannerData: nil)
@@ -120,7 +122,6 @@ public extension Transaction {
         private var isNetworkAvailable = true
         private var transactions = [TransactionItem]()
         private let transactionService: TransactionService
-        private let translationService: TranslationService
         private let reachabilityService: ReachabilityService
         private var cancellables: Set<AnyCancellable> = []
         

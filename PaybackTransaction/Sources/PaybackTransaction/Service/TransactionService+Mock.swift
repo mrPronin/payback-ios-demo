@@ -19,12 +19,12 @@ public extension Transaction {
              */
             /*
              if Bool.random() {
-             return Fail(error: Transaction.Errors.someNetworkError)
-             .delay(for: 1, scheduler: RunLoop.main)
-             .eraseToAnyPublisher()
+                 return Fail(error: Network.Errors.unknownError(404))
+                     .delay(for: 1, scheduler: RunLoop.main)
+                     .eraseToAnyPublisher()
              }
              */
-            
+
             guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
                 return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
             }

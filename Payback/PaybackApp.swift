@@ -12,15 +12,16 @@ import PaybackTransaction
 struct PaybackApp: App {
     
     private static func goToDetails(transaction: TransactionItem) -> TransactionDetailsView {
-        TransactionDetailsView(transaction: transaction)
+        TransactionDetailsView(transaction: transaction, translationService: translation)
     }
     
     // We could reuse this service in other features later as well
     private static let reachability = Reachability.Service()
+    private static let translation = Translation.Service()
     
     let viewModel = Transaction.ViewModel(
         transactionService: Transaction.ServiceMock(),
-        translationService: Translation.ServiceMock(),
+        translationService: translation,
         reachabilityService: reachability,
         detailsProvider: goToDetails
     )

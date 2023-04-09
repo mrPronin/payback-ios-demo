@@ -11,14 +11,15 @@ import PaybackCommon
 public struct TransactionDetailsView: View {
     let transaction: TransactionItem
     
-    public init(transaction: TransactionItem) {
+    public init(transaction: TransactionItem, translationService: TranslationService) {
         self.transaction = transaction
+        self.translationService = translationService
     }
     
     public var body: some View {
         VStack {
             HStack {
-                Text("Partner display name:")
+                Text(translationService.localizedString(with: "transaction_details_partner_name"))
                     .font(.headline)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
@@ -34,12 +35,12 @@ public struct TransactionDetailsView: View {
             
             VStack {
                 HStack {
-                    Text("Description:")
+                    Text(translationService.localizedString(with: "transaction_details_description"))
                         .font(.headline)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                         
-                    Text(transaction.transactionDetail.description ?? "No description provided")
+                    Text(transaction.transactionDetail.description ?? "".localized)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                         .foregroundColor(.gray)
@@ -48,7 +49,7 @@ public struct TransactionDetailsView: View {
                 Divider()
                 
                 HStack {
-                    Text("Booking date:")
+                    Text(translationService.localizedString(with: "transaction_details_booking_date"))
                         .font(.headline)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
@@ -67,8 +68,11 @@ public struct TransactionDetailsView: View {
         }
         .padding()
         .background(Color.brandBackground.edgesIgnoringSafeArea(.horizontal))
-        .navigationTitle("Transaction Detail")
+        .navigationTitle(translationService.localizedString(with: "transaction_details_title"))
     }
+    
+    // MARK: - Private
+    private let translationService: TranslationService
 }
 
 struct Previews_TransactionDetailsView_Previews: PreviewProvider {
@@ -98,6 +102,9 @@ struct Previews_TransactionDetailsView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        TransactionDetailsView(transaction: transaction)
+        TransactionDetailsView(
+            transaction: transaction,
+            translationService: Translation.Service()
+        )
     }
 }

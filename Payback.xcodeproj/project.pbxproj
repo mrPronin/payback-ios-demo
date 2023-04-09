@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0960B79029E2BD1F00908B32 /* PaybackTransaction in Frameworks */ = {isa = PBXBuildFile; productRef = 0960B78F29E2BD1F00908B32 /* PaybackTransaction */; };
 		096B55B729E0728100326E61 /* PaybackCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 096B55B629E0728100326E61 /* PaybackCommon */; };
-		0971197629D95F7200D00134 /* TransactionListViewModelOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0971197529D95F7200D00134 /* TransactionListViewModelOld.swift */; };
 		0971198029D9A1C600D00134 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0971197F29D9A1C600D00134 /* PBTransactions.json */; };
 		09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5129D9599E0075198D /* PaybackApp.swift */; };
 		09D02D5629D9599F0075198D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5529D9599F0075198D /* Assets.xcassets */; };
@@ -28,9 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		092A66B729E333ED00B37AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0960B78E29E2ABD100908B32 /* PaybackTransaction */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackTransaction; sourceTree = SOURCE_ROOT; };
 		096B55B429E070DA00326E61 /* PaybackCommon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackCommon; path = Payback/LocalPackages/PaybackCommon; sourceTree = SOURCE_ROOT; };
-		0971197529D95F7200D00134 /* TransactionListViewModelOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModelOld.swift; sourceTree = "<group>"; };
 		0971197F29D9A1C600D00134 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = SOURCE_ROOT; };
 		09D02D4E29D9599E0075198D /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D02D5129D9599E0075198D /* PaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackApp.swift; sourceTree = "<group>"; };
@@ -60,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092A66B829E3340800B37AB3 /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				09D02D5529D9599F0075198D /* Assets.xcassets */,
+				092A66B729E333ED00B37AB3 /* Info.plist */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
 		0960B78D29E2AB9600908B32 /* LocalPackages */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,14 +89,6 @@
 			children = (
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		0971197029D95D6C00D00134 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0971197529D95F7200D00134 /* TransactionListViewModelOld.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		09D02D4529D9599E0075198D = {
@@ -116,8 +116,7 @@
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
 				0960B78D29E2AB9600908B32 /* LocalPackages */,
 				0971196E29D95D4600D00134 /* Service */,
-				0971197029D95D6C00D00134 /* ViewModel */,
-				09D02D5529D9599F0075198D /* Assets.xcassets */,
+				092A66B829E3340800B37AB3 /* Recources */,
 				09D02D5729D9599F0075198D /* Preview Content */,
 			);
 			path = Payback;
@@ -247,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */,
-				0971197629D95F7200D00134 /* TransactionListViewModelOld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +395,7 @@
 				DEVELOPMENT_TEAM = TFH2SGDX62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Payback/Recources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -427,6 +426,7 @@
 				DEVELOPMENT_TEAM = TFH2SGDX62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Payback/Recources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

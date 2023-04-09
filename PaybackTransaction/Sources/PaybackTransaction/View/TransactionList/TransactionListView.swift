@@ -21,7 +21,7 @@ public struct TransactionListView<VM: TransactionListViewModel>: View {
     public var body: some View {
         NavigationView {
             VStack {
-                Picker("Category", selection: $viewModel.selectedCategoryFilter) {
+                Picker(viewModel.translationService.localizedString(with: "transaction_list_category"), selection: $viewModel.selectedCategoryFilter) {
                     ForEach(viewModel.categoryFilterPickerOptions, id: \.id) { option in
                         Text(option.title)
                     }
@@ -53,7 +53,7 @@ public struct TransactionListView<VM: TransactionListViewModel>: View {
                     HStack {
                         Spacer()
                         HStack {
-                            Text("Total:")
+                            Text(viewModel.translationService.localizedString(with: "transaction_list_total"))
                                 .fontWeight(.semibold)
                             Text(viewModel.filteredTransactionsTotal, format: .currency(code: viewModel.transactionsCurrency))
                         }
@@ -64,7 +64,7 @@ public struct TransactionListView<VM: TransactionListViewModel>: View {
                 }
             }
             .banner(data: $viewModel.bannerData)
-            .navigationTitle("Transactions")
+            .navigationTitle(viewModel.translationService.localizedString(with: "transaction_list_title"))
             .task {
                 if !dataLoaded {
                     await viewModel.fetchTransactions()
