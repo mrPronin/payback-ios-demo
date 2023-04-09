@@ -10,6 +10,7 @@ import PaybackTransaction
 import Tabbar
 import PaybackFeed
 import PaybackOnlineShopping
+import PaybackSettings
 
 @main
 struct PaybackApp: App {
