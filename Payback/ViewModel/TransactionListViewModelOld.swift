@@ -7,7 +7,7 @@
 
 import Foundation
 import Network
-import PaybackCommon
+import PaybackTransaction
 
 final class TransactionListViewModelOld: ObservableObject {
     
@@ -43,18 +43,6 @@ final class TransactionListViewModelOld: ObservableObject {
         guard isNetworkAvailable else { return }
         
         await set(isLoading: true)
-        
-         /*
-         User Story 3.
-         As a user of the App, I want to get feedback when loading of the transactions is ongoing or an Error occurs. (Just delay the mocked server response for 1-2 seconds and randomly fail it)
-        */
-        /*
-         if Bool.random() {
-            await set(isLoading: false)
-            await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Some network error", type: .error))
-            return
-        }
-        */
         
         guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
             await set(bannerData: BannerViewModifier.BannerData(title: "Error", details: "Failed to load JSON data", type: .error))

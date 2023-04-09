@@ -11,9 +11,11 @@ import PaybackTransaction
 @main
 struct PaybackApp: App {
     
-    private static func goToDetails(transaction: TransactionItem) -> TransactionDetailsView { TransactionDetailsView(transaction: transaction) }
+    private static func goToDetails(transaction: TransactionItem) -> TransactionDetailsView {
+        TransactionDetailsView(transaction: transaction)
+    }
     
-    let viewModel = PaybackCommon.Transaction.ViewModel(
+    let viewModel = Transaction.ViewModel(
         transactionService: TransactionServiceMock(),
         translationService: TranslationServiceMock(),
         reachabilityService: ReachabilityServiceMock(),
