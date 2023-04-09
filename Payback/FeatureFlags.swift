@@ -9,7 +9,7 @@ import Foundation
 
 public struct FeatureFlags {
     static let transactionEnabled = true
-    static let tabbarEnabled = false
+    static let tabbarEnabled = true
     static let feedEnabled = true
     static let onlineShoppingEnabled = true
     static let settingsEnabled = true

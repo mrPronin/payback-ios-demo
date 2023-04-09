@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PaybackTransaction
+import Tabbar
 
 @main
 struct PaybackApp: App {
@@ -61,7 +62,7 @@ struct PaybackApp: App {
     var transactionTabProvider: TabViewProvider {
         return .init(
             systemImageName: "repeat.1.circle",
-            tabName: "Transactions") {
+            tabName: PaybackApp.translation.localizedString(with: "transaction_list_tab_name")) {
                 return TransactionListView(viewModel: transactionViewModel).erased
             }
     }
@@ -69,7 +70,7 @@ struct PaybackApp: App {
     var feedTabProvider: TabViewProvider {
         return .init(
             systemImageName: "server.rack",
-            tabName: "Feed") {
+            tabName: PaybackApp.translation.localizedString(with: "feed_tab_name")) {
                 return FeedView().erased
             }
     }
@@ -77,7 +78,7 @@ struct PaybackApp: App {
     var onlineShoppingTabProvider: TabViewProvider {
         return .init(
             systemImageName: "cart.circle.fill",
-            tabName: "Online shopping") {
+            tabName: PaybackApp.translation.localizedString(with: "online_shopping_tab_name")) {
                 return OnlineShoppingView().erased
             }
     }
@@ -85,7 +86,7 @@ struct PaybackApp: App {
     var settingsTabProvider: TabViewProvider {
         return .init(
             systemImageName: "gear.circle",
-            tabName: "Settings") {
+            tabName: PaybackApp.translation.localizedString(with: "settings_tab_name")) {
                 return SettingsView().erased
             }
     }
