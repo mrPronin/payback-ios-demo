@@ -85,12 +85,12 @@
 		0960B78D29E2AB9600908B32 /* LocalPackages */ = {
 			isa = PBXGroup;
 			children = (
-				098299EF29E36B9900637438 /* PaybackSettings */,
-				098299EC29E36A8900637438 /* PaybackOnlineShopping */,
-				092A66CA29E3688500B37AB3 /* PaybackFeed */,
-				092A66C729E3646100B37AB3 /* Tabbar */,
 				096B55B429E070DA00326E61 /* PaybackCommon */,
 				0960B78E29E2ABD100908B32 /* PaybackTransaction */,
+				092A66C729E3646100B37AB3 /* Tabbar */,
+				092A66CA29E3688500B37AB3 /* PaybackFeed */,
+				098299EC29E36A8900637438 /* PaybackOnlineShopping */,
+				098299EF29E36B9900637438 /* PaybackSettings */,
 			);
 			path = LocalPackages;
 			sourceTree = "<group>";
