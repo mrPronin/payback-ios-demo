@@ -9,8 +9,28 @@ import Foundation
 import Combine
 
 public extension Transaction {
-    struct ServiceMock: TransactionService {
-        public init() {}
+    class ServiceMock: TransactionService {
+        // MARK: - Public
+        public var transactionList: TransactionList?
+        public var error: Error?
+        public init() {
+            transactionList = seedTransactionList()
+        }
+        private func seedTransactionList() -> TransactionList? {
+            guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
+                return nil
+            }
+            guard let jsonData = try? Data(contentsOf: url) else {
+                return nil
+            }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            guard let decodedData = try? decoder.decode(TransactionList.self, from: jsonData) else {
+                return nil
+            }
+            return decodedData
+        }
         public var transactions: AnyPublisher<TransactionList, Error> {
             
             /*
@@ -24,21 +44,15 @@ public extension Transaction {
                      .eraseToAnyPublisher()
              }
              */
-
-            guard let url = Bundle.main.url(forResource: "PBTransactions", withExtension: "json") else {
-                return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
+            if let error = error {
+                return Fail(error: error).eraseToAnyPublisher()
             }
-            guard let jsonData = try? Data(contentsOf: url) else {
+            
+            guard let transactionList = transactionList else {
                 return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
             }
             
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            guard let decodedData = try? decoder.decode(TransactionList.self, from: jsonData) else {
-                return Fail(error: Transaction.Errors.invalidJSON).eraseToAnyPublisher()
-            }
-            
-            return Just(decodedData)
+            return Just(transactionList)
                 .delay(for: 1, scheduler: RunLoop.main)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()

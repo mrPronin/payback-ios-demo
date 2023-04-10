@@ -11,7 +11,7 @@ import SwiftUI
 
 public typealias TransactionDetailsProvider<Details: View> = (TransactionItem) -> Details
 
-public protocol TransactionListViewModel: ObservableObject {
+public protocol TransactionViewModel: ObservableObject {
     associatedtype DetailsView: View
     var isLoading: Bool { get }
     var bannerData: BannerViewModifier.BannerData? { get set }
@@ -26,7 +26,7 @@ public protocol TransactionListViewModel: ObservableObject {
 }
 
 public extension Transaction {
-    class ViewModel<DetailsView: View>: TransactionListViewModel {
+    class ViewModel<DetailsView: View>: TransactionViewModel {
         
         // MARK: - Public
         public let translationService: TranslationService

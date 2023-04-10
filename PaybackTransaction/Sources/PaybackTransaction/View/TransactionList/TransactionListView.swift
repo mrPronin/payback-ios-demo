@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 import PaybackCommon
 
-public struct TransactionListView<VM: TransactionListViewModel>: View {
+public struct TransactionListView<VM: TransactionViewModel>: View {
     
     @StateObject var viewModel: VM
     @State private var dataLoaded = false

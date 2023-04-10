@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TransactionItem: Codable, Identifiable {
+public struct TransactionItem: Codable, Identifiable, Equatable {
     public let id: UUID
     public let partnerDisplayName: String
     public let alias: Alias
@@ -44,5 +44,9 @@ public struct TransactionItem: Codable, Identifiable {
             public let amount: Double
             public let currency: String
         }
+    }
+    
+    public static func == (lhs: TransactionItem, rhs: TransactionItem) -> Bool {
+        return lhs.id == rhs.id
     }
 }

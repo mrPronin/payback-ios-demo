@@ -10,9 +10,9 @@ import SwiftUI
 public struct BannerViewModifier: ViewModifier {
     
     public struct BannerData {
-        let title: String
-        let details: String
-        let type: BannerType
+        public let title: String
+        public let details: String
+        public let type: BannerType
         
         public init(title: String, details: String, type: BannerType) {
             self.title = title

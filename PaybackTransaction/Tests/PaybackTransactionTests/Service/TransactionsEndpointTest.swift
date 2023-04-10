@@ -5,9 +5,8 @@
 //  Created by Pronin Oleksandr on 09.04.23.
 //
 
-import Foundation
-@testable import PaybackTransaction
 import XCTest
+@testable import PaybackTransaction
 
 class TransactionsEndpointTest: XCTestCase {
     let host = URLHost(rawValue: "test")
