@@ -94,9 +94,3 @@ struct PaybackApp: App {
             }
     }
 }
-
-extension View {
-    var erased: AnyView {
-        return AnyView(self)
-    }
-}

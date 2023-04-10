@@ -40,3 +40,8 @@ struct TabbarItem_Previews: PreviewProvider {
     }
 }
 
+public extension View {
+    var erased: AnyView {
+        return AnyView(self)
+    }
+}
