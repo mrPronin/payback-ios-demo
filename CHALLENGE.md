@@ -1,12 +1,8 @@
-# Modular MVVM SwiftUI coding challenge
+# PAYBACK Coding Challenge
 
-Description:
-- Language: Swift
-- Architecture: Modular MVVM + Combine
-- UI: SwiftUI
+A new App named **WorldOfPAYBACK** is planned to be released. One of its first features involves displaying a list of transactions, and a corresponding detail screen for each.
 
-## Implementation details
-- 
+## "WorldOfPAYBACK" App - Requirements
 
 Please create a SwiftUI App based on the following User-Stories:
 
