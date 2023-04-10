@@ -46,5 +46,5 @@ The project modules are implemented as swift packages. For the sake of simplicit
 
 ## Network service
 The Network service supports two environments: prod and test. This is described in the PaybackCommon module: URLHost.swift. Actual values for the base url are specified in the Constants.swift file. In this way, the service supports:
-	- Production Environment: "GET https://api.payback.com/transactions"
-	- Test Environment: "GET https://api-test.payback.com/transactions"
+- Production Environment: "GET https://api.payback.com/transactions"
+- Test Environment: "GET https://api-test.payback.com/transactions"
