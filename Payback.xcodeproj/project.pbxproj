@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		092A66BA29E3561000B37AB3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A66B929E3561000B37AB3 /* FeatureFlags.swift */; };
-		092A66C929E364EC00B37AB3 /* Tabbar in Frameworks */ = {isa = PBXBuildFile; productRef = 092A66C829E364EC00B37AB3 /* Tabbar */; };
-		092A66CC29E368A800B37AB3 /* PaybackFeed in Frameworks */ = {isa = PBXBuildFile; productRef = 092A66CB29E368A800B37AB3 /* PaybackFeed */; };
-		0960B79029E2BD1F00908B32 /* PaybackTransaction in Frameworks */ = {isa = PBXBuildFile; productRef = 0960B78F29E2BD1F00908B32 /* PaybackTransaction */; };
-		096B55B729E0728100326E61 /* PaybackCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 096B55B629E0728100326E61 /* PaybackCommon */; };
 		0971198029D9A1C600D00134 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0971197F29D9A1C600D00134 /* PBTransactions.json */; };
-		098299EE29E36AA700637438 /* PaybackOnlineShopping in Frameworks */ = {isa = PBXBuildFile; productRef = 098299ED29E36AA700637438 /* PaybackOnlineShopping */; };
-		098299F129E36BB200637438 /* PaybackSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 098299F029E36BB200637438 /* PaybackSettings */; };
 		09D02D5229D9599E0075198D /* PaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D5129D9599E0075198D /* PaybackApp.swift */; };
 		09D02D5629D9599F0075198D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5529D9599F0075198D /* Assets.xcassets */; };
 		09D02D5929D9599F0075198D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D02D5829D9599F0075198D /* Preview Assets.xcassets */; };
 		09D02D6329D9599F0075198D /* PaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02D6229D9599F0075198D /* PaybackTests.swift */; };
+		09E5FD8B29E43D2F00A34585 /* PaybackCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5FD8A29E43D2F00A34585 /* PaybackCommon */; };
+		09E5FD8D29E43D3A00A34585 /* PaybackTransaction in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5FD8C29E43D3A00A34585 /* PaybackTransaction */; };
+		09E5FD8F29E43D4700A34585 /* Tabbar in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5FD8E29E43D4700A34585 /* Tabbar */; };
+		09E5FD9129E43D5000A34585 /* PaybackFeed in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5FD9029E43D5000A34585 /* PaybackFeed */; };
+		09E5FD9329E43D5700A34585 /* PaybackOnlineShopping in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5FD9229E43D5700A34585 /* PaybackOnlineShopping */; };
+		09E5FD9529E43D5F00A34585 /* PaybackSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 09E5FD9429E43D5F00A34585 /* PaybackSettings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +34,19 @@
 /* Begin PBXFileReference section */
 		092A66B729E333ED00B37AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		092A66B929E3561000B37AB3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
-		092A66C729E3646100B37AB3 /* Tabbar */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tabbar; sourceTree = SOURCE_ROOT; };
-		092A66CA29E3688500B37AB3 /* PaybackFeed */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackFeed; sourceTree = SOURCE_ROOT; };
-		0960B78E29E2ABD100908B32 /* PaybackTransaction */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackTransaction; sourceTree = SOURCE_ROOT; };
-		096B55B429E070DA00326E61 /* PaybackCommon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackCommon; path = Payback/LocalPackages/PaybackCommon; sourceTree = SOURCE_ROOT; };
 		0971197F29D9A1C600D00134 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = SOURCE_ROOT; };
-		098299EC29E36A8900637438 /* PaybackOnlineShopping */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackOnlineShopping; sourceTree = SOURCE_ROOT; };
-		098299EF29E36B9900637438 /* PaybackSettings */ = {isa = PBXFileReference; lastKnownFileType = text; path = PaybackSettings; sourceTree = SOURCE_ROOT; };
 		09D02D4E29D9599E0075198D /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D02D5129D9599E0075198D /* PaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackApp.swift; sourceTree = "<group>"; };
 		09D02D5529D9599F0075198D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D02D5829D9599F0075198D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09D02D5E29D9599F0075198D /* PaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D02D6229D9599F0075198D /* PaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackTests.swift; sourceTree = "<group>"; };
+		09E5FD8429E43CB700A34585 /* PaybackCommon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackCommon; path = Packages/PaybackCommon; sourceTree = "<group>"; };
+		09E5FD8529E43CCF00A34585 /* PaybackTransaction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackTransaction; path = Packages/PaybackTransaction; sourceTree = "<group>"; };
+		09E5FD8629E43CE500A34585 /* Tabbar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Tabbar; path = Packages/Tabbar; sourceTree = "<group>"; };
+		09E5FD8729E43CFC00A34585 /* PaybackFeed */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackFeed; path = Packages/PaybackFeed; sourceTree = "<group>"; };
+		09E5FD8829E43D1300A34585 /* PaybackOnlineShopping */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackOnlineShopping; path = Packages/PaybackOnlineShopping; sourceTree = "<group>"; };
+		09E5FD8929E43D2200A34585 /* PaybackSettings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PaybackSettings; path = Packages/PaybackSettings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +54,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				098299EE29E36AA700637438 /* PaybackOnlineShopping in Frameworks */,
-				092A66C929E364EC00B37AB3 /* Tabbar in Frameworks */,
-				096B55B729E0728100326E61 /* PaybackCommon in Frameworks */,
-				098299F129E36BB200637438 /* PaybackSettings in Frameworks */,
-				092A66CC29E368A800B37AB3 /* PaybackFeed in Frameworks */,
-				0960B79029E2BD1F00908B32 /* PaybackTransaction in Frameworks */,
+				09E5FD9329E43D5700A34585 /* PaybackOnlineShopping in Frameworks */,
+				09E5FD8F29E43D4700A34585 /* Tabbar in Frameworks */,
+				09E5FD8B29E43D2F00A34585 /* PaybackCommon in Frameworks */,
+				09E5FD9529E43D5F00A34585 /* PaybackSettings in Frameworks */,
+				09E5FD9129E43D5000A34585 /* PaybackFeed in Frameworks */,
+				09E5FD8D29E43D3A00A34585 /* PaybackTransaction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,19 +82,6 @@
 			path = Recources;
 			sourceTree = "<group>";
 		};
-		0960B78D29E2AB9600908B32 /* LocalPackages */ = {
-			isa = PBXGroup;
-			children = (
-				096B55B429E070DA00326E61 /* PaybackCommon */,
-				0960B78E29E2ABD100908B32 /* PaybackTransaction */,
-				092A66C729E3646100B37AB3 /* Tabbar */,
-				092A66CA29E3688500B37AB3 /* PaybackFeed */,
-				098299EC29E36A8900637438 /* PaybackOnlineShopping */,
-				098299EF29E36B9900637438 /* PaybackSettings */,
-			);
-			path = LocalPackages;
-			sourceTree = "<group>";
-		};
 		096B55B529E0728100326E61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +92,7 @@
 		09D02D4529D9599E0075198D = {
 			isa = PBXGroup;
 			children = (
+				09E5FD8329E43CB700A34585 /* Packages */,
 				09D02D5029D9599E0075198D /* Payback */,
 				09D02D6129D9599F0075198D /* PaybackTests */,
 				09D02D4F29D9599E0075198D /* Products */,
@@ -126,7 +114,6 @@
 			children = (
 				09D02D5129D9599E0075198D /* PaybackApp.swift */,
 				092A66B929E3561000B37AB3 /* FeatureFlags.swift */,
-				0960B78D29E2AB9600908B32 /* LocalPackages */,
 				092A66B829E3340800B37AB3 /* Recources */,
 				09D02D5729D9599F0075198D /* Preview Content */,
 			);
@@ -150,6 +137,19 @@
 			path = PaybackTests;
 			sourceTree = "<group>";
 		};
+		09E5FD8329E43CB700A34585 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				09E5FD8429E43CB700A34585 /* PaybackCommon */,
+				09E5FD8529E43CCF00A34585 /* PaybackTransaction */,
+				09E5FD8629E43CE500A34585 /* Tabbar */,
+				09E5FD8729E43CFC00A34585 /* PaybackFeed */,
+				09E5FD8829E43D1300A34585 /* PaybackOnlineShopping */,
+				09E5FD8929E43D2200A34585 /* PaybackSettings */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,12 +167,12 @@
 			);
 			name = Payback;
 			packageProductDependencies = (
-				096B55B629E0728100326E61 /* PaybackCommon */,
-				0960B78F29E2BD1F00908B32 /* PaybackTransaction */,
-				092A66C829E364EC00B37AB3 /* Tabbar */,
-				092A66CB29E368A800B37AB3 /* PaybackFeed */,
-				098299ED29E36AA700637438 /* PaybackOnlineShopping */,
-				098299F029E36BB200637438 /* PaybackSettings */,
+				09E5FD8A29E43D2F00A34585 /* PaybackCommon */,
+				09E5FD8C29E43D3A00A34585 /* PaybackTransaction */,
+				09E5FD8E29E43D4700A34585 /* Tabbar */,
+				09E5FD9029E43D5000A34585 /* PaybackFeed */,
+				09E5FD9229E43D5700A34585 /* PaybackOnlineShopping */,
+				09E5FD9429E43D5F00A34585 /* PaybackSettings */,
 			);
 			productName = Payback;
 			productReference = 09D02D4E29D9599E0075198D /* Payback.app */;
@@ -535,27 +535,27 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		092A66C829E364EC00B37AB3 /* Tabbar */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Tabbar;
-		};
-		092A66CB29E368A800B37AB3 /* PaybackFeed */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PaybackFeed;
-		};
-		0960B78F29E2BD1F00908B32 /* PaybackTransaction */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PaybackTransaction;
-		};
-		096B55B629E0728100326E61 /* PaybackCommon */ = {
+		09E5FD8A29E43D2F00A34585 /* PaybackCommon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PaybackCommon;
 		};
-		098299ED29E36AA700637438 /* PaybackOnlineShopping */ = {
+		09E5FD8C29E43D3A00A34585 /* PaybackTransaction */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PaybackTransaction;
+		};
+		09E5FD8E29E43D4700A34585 /* Tabbar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Tabbar;
+		};
+		09E5FD9029E43D5000A34585 /* PaybackFeed */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PaybackFeed;
+		};
+		09E5FD9229E43D5700A34585 /* PaybackOnlineShopping */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PaybackOnlineShopping;
 		};
-		098299F029E36BB200637438 /* PaybackSettings */ = {
+		09E5FD9429E43D5F00A34585 /* PaybackSettings */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PaybackSettings;
 		};
